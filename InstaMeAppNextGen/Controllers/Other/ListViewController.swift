@@ -1,5 +1,5 @@
 //
-//  PostViewController.swift
+//  ListViewController.swift
 //  InstaMeAppNextGen
 //
 //  Created by Anton Veldanov on 8/23/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostViewController: UIViewController {
+class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
