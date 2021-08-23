@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		21036BC026D32B9300720B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BBF26D32B9300720B39 /* AppDelegate.swift */; };
 		21036BC226D32B9300720B39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BC126D32B9300720B39 /* SceneDelegate.swift */; };
-		21036BC426D32B9300720B39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BC326D32B9300720B39 /* ViewController.swift */; };
+		21036BC426D32B9300720B39 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BC326D32B9300720B39 /* HomeViewController.swift */; };
 		21036BC726D32B9300720B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21036BC526D32B9300720B39 /* Main.storyboard */; };
 		21036BC926D32B9400720B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21036BC826D32B9400720B39 /* Assets.xcassets */; };
 		21036BCC26D32B9400720B39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21036BCA26D32B9400720B39 /* LaunchScreen.storyboard */; };
+		21036BD926D4360100720B39 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BD826D4360100720B39 /* ExploreViewController.swift */; };
+		21036BDB26D4362D00720B39 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BDA26D4362D00720B39 /* CameraViewController.swift */; };
+		21036BDD26D4364600720B39 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BDC26D4364600720B39 /* NotificationsViewController.swift */; };
+		21036BDF26D4365C00720B39 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BDE26D4365C00720B39 /* ProfileViewController.swift */; };
+		21036BE426D436B700720B39 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BE326D436B700720B39 /* RegistrationViewController.swift */; };
+		21036BE626D436C500720B39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BE526D436C500720B39 /* LoginViewController.swift */; };
+		21036BE826D436EC00720B39 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BE726D436EC00720B39 /* PostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		21036BBC26D32B9300720B39 /* InstaMeAppNextGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaMeAppNextGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21036BBF26D32B9300720B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21036BC126D32B9300720B39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		21036BC326D32B9300720B39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21036BC326D32B9300720B39 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		21036BC626D32B9300720B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21036BC826D32B9400720B39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21036BCB26D32B9400720B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21036BCD26D32B9400720B39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21036BD826D4360100720B39 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		21036BDA26D4362D00720B39 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		21036BDC26D4364600720B39 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		21036BDE26D4365C00720B39 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		21036BE326D436B700720B39 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		21036BE526D436C500720B39 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		21036BE726D436EC00720B39 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,86 @@
 		21036BBE26D32B9300720B39 /* InstaMeAppNextGen */ = {
 			isa = PBXGroup;
 			children = (
-				21036BBF26D32B9300720B39 /* AppDelegate.swift */,
-				21036BC126D32B9300720B39 /* SceneDelegate.swift */,
-				21036BC326D32B9300720B39 /* ViewController.swift */,
-				21036BC526D32B9300720B39 /* Main.storyboard */,
-				21036BC826D32B9400720B39 /* Assets.xcassets */,
-				21036BCA26D32B9400720B39 /* LaunchScreen.storyboard */,
+				21036BD626D4333A00720B39 /* Resources */,
+				21036BD526D4333100720B39 /* Models */,
+				21036BD426D4332800720B39 /* Views */,
+				21036BD326D4331300720B39 /* Controllers */,
 				21036BCD26D32B9400720B39 /* Info.plist */,
 			);
 			path = InstaMeAppNextGen;
+			sourceTree = "<group>";
+		};
+		21036BD326D4331300720B39 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21036BE126D4369D00720B39 /* Other */,
+				21036BE026D4366D00720B39 /* Core Tabs */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		21036BD426D4332800720B39 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21036BC826D32B9400720B39 /* Assets.xcassets */,
+				21036BD726D434C100720B39 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		21036BD526D4333100720B39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21036BD626D4333A00720B39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21036BBF26D32B9300720B39 /* AppDelegate.swift */,
+				21036BC126D32B9300720B39 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		21036BD726D434C100720B39 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				21036BC526D32B9300720B39 /* Main.storyboard */,
+				21036BCA26D32B9400720B39 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		21036BE026D4366D00720B39 /* Core Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				21036BC326D32B9300720B39 /* HomeViewController.swift */,
+				21036BDC26D4364600720B39 /* NotificationsViewController.swift */,
+				21036BDE26D4365C00720B39 /* ProfileViewController.swift */,
+				21036BDA26D4362D00720B39 /* CameraViewController.swift */,
+				21036BD826D4360100720B39 /* ExploreViewController.swift */,
+			);
+			path = "Core Tabs";
+			sourceTree = "<group>";
+		};
+		21036BE126D4369D00720B39 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				21036BE226D436A300720B39 /* Onboarding */,
+				21036BE726D436EC00720B39 /* PostViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		21036BE226D436A300720B39 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				21036BE326D436B700720B39 /* RegistrationViewController.swift */,
+				21036BE526D436C500720B39 /* LoginViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +222,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21036BC426D32B9300720B39 /* ViewController.swift in Sources */,
+				21036BE626D436C500720B39 /* LoginViewController.swift in Sources */,
+				21036BD926D4360100720B39 /* ExploreViewController.swift in Sources */,
+				21036BDB26D4362D00720B39 /* CameraViewController.swift in Sources */,
+				21036BE426D436B700720B39 /* RegistrationViewController.swift in Sources */,
+				21036BE826D436EC00720B39 /* PostViewController.swift in Sources */,
+				21036BC426D32B9300720B39 /* HomeViewController.swift in Sources */,
+				21036BDD26D4364600720B39 /* NotificationsViewController.swift in Sources */,
+				21036BDF26D4365C00720B39 /* ProfileViewController.swift in Sources */,
 				21036BC026D32B9300720B39 /* AppDelegate.swift in Sources */,
 				21036BC226D32B9300720B39 /* SceneDelegate.swift in Sources */,
 			);
