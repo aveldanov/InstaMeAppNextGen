@@ -26,6 +26,10 @@
 		21036BF026D437F800720B39 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BEF26D437F800720B39 /* SearchResultViewController.swift */; };
 		21036BF226D438C900720B39 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BF126D438C900720B39 /* PostEditorViewController.swift */; };
 		21036BF426D45D7800720B39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21036BF326D45D7800720B39 /* GoogleService-Info.plist */; };
+		21036BF726D4AB6300720B39 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BF626D4AB6300720B39 /* DatabaseManager.swift */; };
+		21036BF926D4AC4B00720B39 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BF826D4AC4B00720B39 /* AuthManager.swift */; };
+		21036BFB26D4AC8A00720B39 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BFA26D4AC8A00720B39 /* StorageManager.swift */; };
+		21036BFD26D4B09200720B39 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BFC26D4B09200720B39 /* Extenstions.swift */; };
 		90D9C0E145A8C823BC06E207 /* Pods_InstaMeAppNextGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,10 @@
 		21036BEF26D437F800720B39 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		21036BF126D438C900720B39 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		21036BF326D45D7800720B39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21036BF626D4AB6300720B39 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		21036BF826D4AC4B00720B39 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		21036BFA26D4AC8A00720B39 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		21036BFC26D4B09200720B39 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		91DF6E34AE07958BEF7AAECF /* Pods-InstaMeAppNextGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaMeAppNextGen.release.xcconfig"; path = "Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen.release.xcconfig"; sourceTree = "<group>"; };
 		AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaMeAppNextGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,6 +137,10 @@
 				21036BBF26D32B9300720B39 /* AppDelegate.swift */,
 				21036BC126D32B9300720B39 /* SceneDelegate.swift */,
 				21036BF326D45D7800720B39 /* GoogleService-Info.plist */,
+				21036BF626D4AB6300720B39 /* DatabaseManager.swift */,
+				21036BFA26D4AC8A00720B39 /* StorageManager.swift */,
+				21036BF826D4AC4B00720B39 /* AuthManager.swift */,
+				21036BFC26D4B09200720B39 /* Extenstions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -158,12 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				21036BE226D436A300720B39 /* Onboarding */,
-				21036BE726D436EC00720B39 /* PostViewController.swift */,
-				21036BE926D437BA00720B39 /* EditProfileViewController.swift */,
-				21036BEB26D437CE00720B39 /* SettingsViewController.swift */,
-				21036BED26D437E300720B39 /* ListViewController.swift */,
-				21036BEF26D437F800720B39 /* SearchResultViewController.swift */,
-				21036BF126D438C900720B39 /* PostEditorViewController.swift */,
+				21036BF526D4AA0700720B39 /* General */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -175,6 +182,19 @@
 				21036BE526D436C500720B39 /* LoginViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		21036BF526D4AA0700720B39 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				21036BE726D436EC00720B39 /* PostViewController.swift */,
+				21036BE926D437BA00720B39 /* EditProfileViewController.swift */,
+				21036BEB26D437CE00720B39 /* SettingsViewController.swift */,
+				21036BED26D437E300720B39 /* ListViewController.swift */,
+				21036BEF26D437F800720B39 /* SearchResultViewController.swift */,
+				21036BF126D438C900720B39 /* PostEditorViewController.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		D091E9500FEB5772968EFC31 /* Frameworks */ = {
@@ -309,16 +329,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21036BF726D4AB6300720B39 /* DatabaseManager.swift in Sources */,
 				21036BEA26D437BA00720B39 /* EditProfileViewController.swift in Sources */,
 				21036BE626D436C500720B39 /* LoginViewController.swift in Sources */,
+				21036BFB26D4AC8A00720B39 /* StorageManager.swift in Sources */,
 				21036BD926D4360100720B39 /* ExploreViewController.swift in Sources */,
 				21036BDB26D4362D00720B39 /* CameraViewController.swift in Sources */,
 				21036BE426D436B700720B39 /* RegistrationViewController.swift in Sources */,
 				21036BE826D436EC00720B39 /* PostViewController.swift in Sources */,
+				21036BF926D4AC4B00720B39 /* AuthManager.swift in Sources */,
 				21036BC426D32B9300720B39 /* HomeViewController.swift in Sources */,
 				21036BDD26D4364600720B39 /* NotificationsViewController.swift in Sources */,
 				21036BF026D437F800720B39 /* SearchResultViewController.swift in Sources */,
 				21036BDF26D4365C00720B39 /* ProfileViewController.swift in Sources */,
+				21036BFD26D4B09200720B39 /* Extenstions.swift in Sources */,
 				21036BC026D32B9300720B39 /* AppDelegate.swift in Sources */,
 				21036BF226D438C900720B39 /* PostEditorViewController.swift in Sources */,
 				21036BC226D32B9300720B39 /* SceneDelegate.swift in Sources */,
