@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,9 +25,12 @@
 		21036BEE26D437E300720B39 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BED26D437E300720B39 /* ListViewController.swift */; };
 		21036BF026D437F800720B39 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BEF26D437F800720B39 /* SearchResultViewController.swift */; };
 		21036BF226D438C900720B39 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BF126D438C900720B39 /* PostEditorViewController.swift */; };
+		21036BF426D45D7800720B39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21036BF326D45D7800720B39 /* GoogleService-Info.plist */; };
+		90D9C0E145A8C823BC06E207 /* Pods_InstaMeAppNextGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2088EFBBE9A179C905FEC42A /* Pods-InstaMeAppNextGen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaMeAppNextGen.debug.xcconfig"; path = "Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen.debug.xcconfig"; sourceTree = "<group>"; };
 		21036BBC26D32B9300720B39 /* InstaMeAppNextGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaMeAppNextGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21036BBF26D32B9300720B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21036BC126D32B9300720B39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +51,9 @@
 		21036BED26D437E300720B39 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		21036BEF26D437F800720B39 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		21036BF126D438C900720B39 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
+		21036BF326D45D7800720B39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		91DF6E34AE07958BEF7AAECF /* Pods-InstaMeAppNextGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaMeAppNextGen.release.xcconfig"; path = "Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen.release.xcconfig"; sourceTree = "<group>"; };
+		AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaMeAppNextGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D9C0E145A8C823BC06E207 /* Pods_InstaMeAppNextGen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +73,8 @@
 			children = (
 				21036BBE26D32B9300720B39 /* InstaMeAppNextGen */,
 				21036BBD26D32B9300720B39 /* Products */,
+				ED25E5B06E7E646CA7CD6094 /* Pods */,
+				D091E9500FEB5772968EFC31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +128,7 @@
 			children = (
 				21036BBF26D32B9300720B39 /* AppDelegate.swift */,
 				21036BC126D32B9300720B39 /* SceneDelegate.swift */,
+				21036BF326D45D7800720B39 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -167,6 +177,23 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		D091E9500FEB5772968EFC31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED25E5B06E7E646CA7CD6094 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2088EFBBE9A179C905FEC42A /* Pods-InstaMeAppNextGen.debug.xcconfig */,
+				91DF6E34AE07958BEF7AAECF /* Pods-InstaMeAppNextGen.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21036BD026D32B9400720B39 /* Build configuration list for PBXNativeTarget "InstaMeAppNextGen" */;
 			buildPhases = (
+				F11FF4D412CE149F376D177F /* [CP] Check Pods Manifest.lock */,
 				21036BB826D32B9300720B39 /* Sources */,
 				21036BB926D32B9300720B39 /* Frameworks */,
 				21036BBA26D32B9300720B39 /* Resources */,
+				7F6E5429D3F64871BA1CA9B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,11 +255,54 @@
 			files = (
 				21036BCC26D32B9400720B39 /* LaunchScreen.storyboard in Resources */,
 				21036BC926D32B9400720B39 /* Assets.xcassets in Resources */,
+				21036BF426D45D7800720B39 /* GoogleService-Info.plist in Resources */,
 				21036BC726D32B9300720B39 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F6E5429D3F64871BA1CA9B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F11FF4D412CE149F376D177F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstaMeAppNextGen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		21036BB826D32B9300720B39 /* Sources */ = {
@@ -395,6 +467,7 @@
 		};
 		21036BD126D32B9400720B39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2088EFBBE9A179C905FEC42A /* Pods-InstaMeAppNextGen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -414,6 +487,7 @@
 		};
 		21036BD226D32B9400720B39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91DF6E34AE07958BEF7AAECF /* Pods-InstaMeAppNextGen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
