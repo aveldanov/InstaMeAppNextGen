@@ -20,7 +20,16 @@ public class AuthManager{
         
     }
     
-    public func loginUser(username: String?, email: String?, password: String){
+    public func loginUser(username: String?, email: String?, password: String, completion: (Bool)->Void){
+        if let email = email{
+            // email login
+            
+        }else if let username = username{
+            // username login
+            
+        }
+        
+        
         
     }
     

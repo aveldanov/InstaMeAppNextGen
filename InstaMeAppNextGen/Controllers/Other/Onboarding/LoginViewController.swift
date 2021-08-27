@@ -106,17 +106,13 @@ class LoginViewController: UIViewController {
         termsButton.addTarget(self, action: #selector(didTapTermsButton), for: .touchUpInside)
         privacyButton.addTarget(self, action: #selector(didTapPrivacyButton), for: .touchUpInside)
         
-        
         addSubviews()
-        
-        
     }
     
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // assign frames
-        
         
         headerView.frame = CGRect(x: 0,
                                   y: 0.0,
@@ -149,7 +145,6 @@ class LoginViewController: UIViewController {
         )
 
         
-        
         termsButton.frame = CGRect(x: 10,
                                    y: view.height-view.safeAreaInsets.bottom - 100,
                                    width: view.width - 20,
@@ -163,9 +158,7 @@ class LoginViewController: UIViewController {
                                    height: 50
         )
         
-        
         configureHeaderView()
-        
     }
     
     private func configureHeaderView(){
@@ -231,7 +224,6 @@ class LoginViewController: UIViewController {
         guard let url = URL(string: "https://help.instagram.com/519522125107875") else {
             return
         }
-        
         let vc = SFSafariViewController(url: url)
         present(vc, animated: true, completion: nil)
     }
@@ -253,11 +245,6 @@ extension LoginViewController: UITextFieldDelegate{
         }else{
             didTapLoginButton()
         }
-        
-        
-        
         return true
     }
-    
-    
 }
