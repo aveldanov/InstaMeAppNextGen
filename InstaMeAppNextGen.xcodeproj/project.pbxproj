@@ -137,9 +137,9 @@
 				21036BBF26D32B9300720B39 /* AppDelegate.swift */,
 				21036BC126D32B9300720B39 /* SceneDelegate.swift */,
 				21036BF326D45D7800720B39 /* GoogleService-Info.plist */,
+				21036BF826D4AC4B00720B39 /* AuthManager.swift */,
 				21036BF626D4AB6300720B39 /* DatabaseManager.swift */,
 				21036BFA26D4AC8A00720B39 /* StorageManager.swift */,
-				21036BF826D4AC4B00720B39 /* AuthManager.swift */,
 				21036BFC26D4B09200720B39 /* Extenstions.swift */,
 			);
 			path = Resources;
