@@ -16,7 +16,13 @@ public class AuthManager{
      //MARK: Public
     
     public func registerNewUser(username: String, email: String, password: String){
-        
+        /*
+         check if username is available
+         check if email is available
+         create account
+         insert account to DB
+         
+         */
         
     }
     
@@ -30,15 +36,9 @@ public class AuthManager{
                 }
                 completion(true)
             }
-            
         }else if let username = username{
             // username login
             print(username)
         }
-        
-        
-        
     }
-    
-    
 }

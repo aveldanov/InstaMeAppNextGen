@@ -13,4 +13,17 @@ public class DatabaseManager{
     
     static let shared =  DatabaseManager()
 
+    
+     //MARK: Public
+    
+    /// Check if username and email is available
+    public func canCreateNewUser(with email: String, username: String, completion: (Bool)->Void ){
+        
+        
+        
+        
+    }
+    
+    
+    
 }
