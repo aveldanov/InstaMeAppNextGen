@@ -6,7 +6,9 @@
 //
 
 import SafariServices
+import Firebase
 import UIKit
+
 
 class LoginViewController: UIViewController {
     
@@ -204,10 +206,41 @@ class LoginViewController: UIViewController {
               let password = passwordField.text, !password.isEmpty, password.count >= 8 else {
             return
         }
+        
+        var username: String?
+        var email: String?
         // login func
         
+        if usernameEmail.contains("@"), usernameEmail.contains("."){
+            //email login
+            email = usernameEmail
+            
+        }else{
+            // username login
+            username = usernameEmail
+            
+        }
         
         
+        AuthManager.shared.loginUser(username: username,
+                                     email: email,
+                                     password: password) { success in
+            
+            DispatchQueue.main.async {
+                if success{
+                    //user logged in
+                    self.dismiss(animated: true, completion: nil)
+                    
+                    
+                }else{
+                    // error
+                    let alert = UIAlertController(title: "Login Error", message: "Were not able to login", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Dismiis", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     @objc private func didTapTermsButton(){
