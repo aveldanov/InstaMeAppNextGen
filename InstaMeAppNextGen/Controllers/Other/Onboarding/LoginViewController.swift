@@ -193,8 +193,6 @@ class LoginViewController: UIViewController {
         view.addSubview(privacyButton)
         view.addSubview(createAccountButton)
         view.addSubview(headerView)
-        
-        
     }
     
     
@@ -263,7 +261,9 @@ class LoginViewController: UIViewController {
     
     @objc private func didTapCreateAccount(){
         let vc = RegistrationViewController()
-        present(vc, animated: true, completion: nil)
+        vc.title = "Create Account"
+        
+        present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
     
