@@ -28,15 +28,15 @@ public class DatabaseManager{
         
         
     }
+
+
     /// Insert new data into DB
     /// Parameters:
     /// - Parameter username: String representing username
     /// - Parameter email: String representing email
-    /// - Parameter completion: String representing email
+    /// - Parameter completion: Async callback for database
 
     public func insertNewUser(with email: String, username: String,completion: @escaping (Bool)->Void){
-        
-        
         database.child(email).setValue(["username": username]) { error, _ in
             if error == nil{
                 completion(true)
