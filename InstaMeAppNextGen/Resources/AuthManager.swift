@@ -15,7 +15,7 @@ public class AuthManager{
     
      //MARK: Public
     
-    public func registerNewUser(username: String, email: String, password: String){
+    public func registerNewUser(username: String, email: String, password: String, completion: @escaping(Bool)->()){
         /*
          check if username is available
          check if email is available
@@ -24,12 +24,25 @@ public class AuthManager{
          
          */
         
-        DatabaseManager.shared.canCreateNewUser(username: username, email: email) { canCreate in
+        DatabaseManager.shared.canCreateNewUser(with: email, username: username) { canCreate in
             if canCreate{
                 /*
                  create account
                  insert account to DB
                  */
+                Auth.auth().createUser(withEmail: email, password: password) { result, error in
+                    guard result != nil, error == nil else{
+                        //Firebase could not create accout
+                        completion(false)
+                        return
+                    }
+                    // Insert into database
+                    
+                    
+                }
+            }else{
+                //either email or username does not exist
+                completion(false)
                 
             }
             
