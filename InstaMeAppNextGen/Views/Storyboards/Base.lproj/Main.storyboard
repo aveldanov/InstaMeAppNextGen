@@ -67,7 +67,7 @@
         <scene sceneID="07J-6b-h5k">
             <objects>
                 <navigationController id="rHT-MN-Jo7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="globe" catalog="system" id="ipO-TN-zon"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="ipO-TN-zon"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oHx-Am-Ffi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -101,7 +101,7 @@
         <scene sceneID="5pU-aT-fAh">
             <objects>
                 <navigationController id="blu-yw-43x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="bell" catalog="system" id="rZO-vL-L6P"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="rZO-vL-L6P"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j3p-zn-o4w">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -197,9 +197,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
-        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

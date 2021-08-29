@@ -24,7 +24,7 @@ public class DatabaseManager{
 
     public func canCreateNewUser(with email: String, username: String, completion: (Bool)->Void ){
         
-        
+        completion(true)
         
         
     }
@@ -37,18 +37,16 @@ public class DatabaseManager{
     /// - Parameter completion: Async callback for database
 
     public func insertNewUser(with email: String, username: String,completion: @escaping (Bool)->Void){
-        database.child(email).setValue(["username": username]) { error, _ in
+        database.child(email.safeDatabaseKey()).setValue(["username": username]) { error, _ in
             if error == nil{
+                //success
                 completion(true)
                 return
             }else{
+                //failure
                 completion(false)
                 return
             }
         }
-        
-    }
-    
-    
-    
+    } 
 }

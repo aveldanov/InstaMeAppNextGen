@@ -178,8 +178,8 @@
 		21036BE226D436A300720B39 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				21036BE326D436B700720B39 /* RegistrationViewController.swift */,
 				21036BE526D436C500720B39 /* LoginViewController.swift */,
+				21036BE326D436B700720B39 /* RegistrationViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -187,9 +187,9 @@
 		21036BF526D4AA0700720B39 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				21036BEB26D437CE00720B39 /* SettingsViewController.swift */,
 				21036BE726D436EC00720B39 /* PostViewController.swift */,
 				21036BE926D437BA00720B39 /* EditProfileViewController.swift */,
-				21036BEB26D437CE00720B39 /* SettingsViewController.swift */,
 				21036BED26D437E300720B39 /* ListViewController.swift */,
 				21036BEF26D437F800720B39 /* SearchResultViewController.swift */,
 				21036BF126D438C900720B39 /* PostEditorViewController.swift */,
