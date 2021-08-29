@@ -81,23 +81,19 @@ class SettingsViewController: UIViewController {
                         }
                     }else{
                         
+                        fatalError("[SettingsViewController] Could not logout")
                         
                     }
                 }
             }
-            
-            
-            
-            
         }))
         
-        
-        
-        
-        
+        // for ipad layout
+        actionSheet.popoverPresentationController?.sourceView = tableView
+        actionSheet.popoverPresentationController?.sourceRect = tableView.bounds
+
+        present(actionSheet, animated: true, completion: nil)
     }
-    
-    
 }
 
 
