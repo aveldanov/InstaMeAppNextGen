@@ -6,8 +6,9 @@
 //
 
 import UIKit
+///Profile view controller. Final - cannot be overriden
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
 
     private var collectionView: UICollectionView?
     
@@ -33,12 +34,21 @@ class ProfileViewController: UIViewController {
     }
     
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        collectionView?.frame = view.bounds
+        
+    }
+    
+    
+    
+    
     private func configureNavigationBar(){
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"),
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(didTapSettingsButton))
-        
     }
     
     @objc func didTapSettingsButton(){
@@ -49,8 +59,20 @@ class ProfileViewController: UIViewController {
 }
 
 
-extension ProfileViewController: UICollectionViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout{
+extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
     
     
 }
