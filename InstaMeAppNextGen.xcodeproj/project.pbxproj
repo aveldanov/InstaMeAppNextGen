@@ -30,6 +30,7 @@
 		21036BF926D4AC4B00720B39 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BF826D4AC4B00720B39 /* AuthManager.swift */; };
 		21036BFB26D4AC8A00720B39 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BFA26D4AC8A00720B39 /* StorageManager.swift */; };
 		21036BFD26D4B09200720B39 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036BFC26D4B09200720B39 /* Extenstions.swift */; };
+		21036C2F26DEE7B800720B39 /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036C2E26DEE7B800720B39 /* IGFeedPostTableViewCell.swift */; };
 		90D9C0E145A8C823BC06E207 /* Pods_InstaMeAppNextGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		21036BF826D4AC4B00720B39 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		21036BFA26D4AC8A00720B39 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		21036BFC26D4B09200720B39 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		21036C2E26DEE7B800720B39 /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
 		91DF6E34AE07958BEF7AAECF /* Pods-InstaMeAppNextGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaMeAppNextGen.release.xcconfig"; path = "Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen.release.xcconfig"; sourceTree = "<group>"; };
 		AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaMeAppNextGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 		21036BD426D4332800720B39 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				21036C2D26DEE79200720B39 /* Cells */,
 				21036BC826D32B9400720B39 /* Assets.xcassets */,
 				21036BD726D434C100720B39 /* Storyboards */,
 			);
@@ -195,6 +198,14 @@
 				21036BF126D438C900720B39 /* PostEditorViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		21036C2D26DEE79200720B39 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				21036C2E26DEE7B800720B39 /* IGFeedPostTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D091E9500FEB5772968EFC31 /* Frameworks */ = {
@@ -342,6 +353,7 @@
 				21036BDD26D4364600720B39 /* NotificationsViewController.swift in Sources */,
 				21036BF026D437F800720B39 /* SearchResultViewController.swift in Sources */,
 				21036BDF26D4365C00720B39 /* ProfileViewController.swift in Sources */,
+				21036C2F26DEE7B800720B39 /* IGFeedPostTableViewCell.swift in Sources */,
 				21036BFD26D4B09200720B39 /* Extenstions.swift in Sources */,
 				21036BC026D32B9300720B39 /* AppDelegate.swift in Sources */,
 				21036BF226D438C900720B39 /* PostEditorViewController.swift in Sources */,
