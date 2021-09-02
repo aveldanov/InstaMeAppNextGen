@@ -6,13 +6,12 @@
 //
 
 import UIKit
-
+import SafariServices
 
 
 ///View Controller to show user settings
 
 struct SettingCellModel{
-    
     let title: String
     let handler: ()->Void
 }
@@ -24,7 +23,6 @@ class SettingsViewController: UIViewController {
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero,
                                 style: .grouped)
-        
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()
@@ -45,20 +43,88 @@ class SettingsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
-        
-        
     }
     
     
     
     private func configureModels(){
-        let section = [
-            
-            SettingCellModel(title: "Logout", handler: {
-                self.didTapLogout()
+        data.append([
+            SettingCellModel(title: "Edit Profile", handler: {[weak self] in
+                self?.didTapEditProfile()
+            }),
+            SettingCellModel(title: "Invite Friends", handler: {[weak self] in
+                self?.didTapInviteFriends()
+            }),
+            SettingCellModel(title: "Save Original Posts", handler: {[weak self] in
+                self?.didTapSaveOriginalPosts()
+            }),
+            SettingCellModel(title: ""){
+                            
+                        }
+        ])
+
+        
+        data.append([
+            SettingCellModel(title: "Terms Of Service", handler: {[weak self] in
+                self?.openURL(type: .terms)
+            }),
+            SettingCellModel(title: "Privacy Policy", handler: {[weak self] in
+                self?.openURL(type: .privacy)
+            }),
+            SettingCellModel(title: "Help / Feedback", handler: {[weak self] in
+                self?.openURL(type: .help)
             })
-        ]
-        data.append(section)
+        ])
+        
+        data.append([
+            SettingCellModel(title: "Logout", handler: {[weak self] in
+                self?.didTapLogout()
+            })
+        ])
+    }
+    
+     //MARK: Actions
+    
+    enum SettingsURLType {
+        case terms, privacy, help
+    }
+    
+    
+    private func didTapEditProfile(){
+        let vc = EditProfileViewController()
+        vc.title = "Edit Profile"
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC, animated: true, completion: nil)
+    }
+    
+    private func didTapInviteFriends(){
+        // Show shared sheets to invire friends
+        
+    }
+    
+    private func didTapSaveOriginalPosts(){
+        
+        
+    }
+    
+    private func openURL(type: SettingsURLType){
+        let urlString: String
+        
+        switch type {
+        case .terms:
+            urlString = "https://help.instagram.com/581066165581870"
+        case .privacy:
+            urlString = "https://help.instagram.com/519522125107875"
+        case .help:
+            urlString = "https://help.instagram.com/"
+        }
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
     }
     
     
@@ -110,12 +176,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
         return data[section].count
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = data[indexPath.section][indexPath.row].title
-        
-        
+        // add '>' to the cell
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
@@ -125,8 +190,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
         
         // handle cell selection
         let model = data[indexPath.section][indexPath.row].handler()
-        
-        
         
     }
     
