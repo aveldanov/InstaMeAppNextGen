@@ -6,6 +6,12 @@
 //
 
 import UIKit
+// Return value to view controller
+
+protocol FormTableViewDelegate {
+    func formTableViewCell(_ cell: FormTableViewCell, didUpdateTextField value: String?)
+}
+
 
 class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
 
@@ -76,6 +82,7 @@ class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
      //MARK: textField
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()//get rids of keyboard on Enter
         return true
     }
     
