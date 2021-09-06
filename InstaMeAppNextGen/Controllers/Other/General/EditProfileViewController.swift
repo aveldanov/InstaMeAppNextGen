@@ -7,11 +7,31 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+struct EditProfileFormModel{
+    let label: String
+    let placeholder: String
+    var value: String
+}
 
+final class EditProfileViewController: UIViewController {
+
+    
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return tableView
+    }()
+    
+    private var models = [[EditProfileFormModel]]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureModels()
         view.backgroundColor = .systemBackground
+        tableView.tableHeaderView = createTableHeaderView()
+        tableView.dataSource = self
+        view.addSubview(tableView)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save",
                                                             style: .done,
                                                             target: self,
@@ -22,13 +42,33 @@ class EditProfileViewController: UIViewController {
                                                            action: #selector(didTapCancel))
     }
     
-
-    @objc private func didTapSave(){
+    private func configureModels(){
         
         
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
+    
+    
+    
+    
+     //MARK: Actions
+
+    @objc private func didTapSave(){
+        // save info to database
+        
+    }
+    
     @objc private func didTapCancel(){
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @objc private func didTapProfilePhotoButton(){
+        
         
         
     }
@@ -54,6 +94,45 @@ class EditProfileViewController: UIViewController {
         actionSheet.popoverPresentationController?.sourceRect = view.bounds
 
         present(actionSheet, animated: true, completion: nil)
+    }
+
+}
+
+
+extension EditProfileViewController: UITableViewDataSource{
+    //MARK: TableView
+    
+    
+    private func createTableHeaderView() -> UIView{
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: view.height/4).integral)
+        let size = header.height/1.5
+        let profilePhotoButton = UIButton(frame: CGRect(x: (view.width-size)/2, y: (header.height-size)/2, width: size, height: size))
+        
+        header.addSubview(profilePhotoButton)
+        profilePhotoButton.layer.masksToBounds = true
+        profilePhotoButton.layer.cornerRadius = size/2.0
+        profilePhotoButton.tintColor = .label
+        profilePhotoButton.addTarget(size, action: #selector(didTapProfilePhotoButton), for: .touchUpInside)
+        
+        profilePhotoButton.setBackgroundImage(UIImage(systemName: "person.circle"), for: .normal)
+        profilePhotoButton.layer.borderWidth = 1
+        profilePhotoButton.layer.borderColor = UIColor.secondarySystemBackground.cgColor
+        return header
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "Hello world"
+        
+        return cell
     }
 
 }

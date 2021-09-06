@@ -49,6 +49,7 @@ final class ProfileViewController: UIViewController {
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(didTapSettingsButton))
+        
     }
     
     @objc func didTapSettingsButton(){
