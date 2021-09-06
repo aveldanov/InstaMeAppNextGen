@@ -10,7 +10,7 @@ import UIKit
 struct EditProfileFormModel{
     let label: String
     let placeholder: String
-    var value: String
+    var value: String?
 }
 
 final class EditProfileViewController: UIViewController {
@@ -43,8 +43,25 @@ final class EditProfileViewController: UIViewController {
     }
     
     private func configureModels(){
+        //section 1:  name, username, website, bio
+        let section1Labels = ["Name", "Username","Bio"]
+        var section1 = [EditProfileFormModel]()
+        for label in section1Labels{
+            let model = EditProfileFormModel(label: label, placeholder: "Enter: \(label)...", value: nil)
+            section1.append(model)
+        }
+        models.append(section1)
         
         
+        //section 2: email, phone, gender
+        
+        let section2Labels = ["Email", "Phone","Gender"]
+        var section2 = [EditProfileFormModel]()
+        for label in section2Labels{
+            let model = EditProfileFormModel(label: label, placeholder: "Enter: \(label)...", value: nil)
+            section2.append(model)
+        }
+        models.append(section2)
     }
     
     override func viewDidLayoutSubviews() {
@@ -121,18 +138,28 @@ extension EditProfileViewController: UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return models.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return models[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Hello world"
+        let model = models[indexPath.section][indexPath.row]
+        cell.textLabel?.text = model.label
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard  section == 1  else {
+            return nil
+        }
+        
+        
+        return "Private Information"
     }
 
 }

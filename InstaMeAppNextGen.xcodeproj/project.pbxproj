@@ -34,6 +34,7 @@
 		21036C3226E08F5E00720B39 /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036C3126E08F5E00720B39 /* IGFeedPostHeaderTableViewCell.swift */; };
 		21036C3426E08F7D00720B39 /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036C3326E08F7D00720B39 /* IGFeedPostActionsTableViewCell.swift */; };
 		21036C3626E08FA300720B39 /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036C3526E08FA300720B39 /* IGFeedPostGeneralTableViewCell.swift */; };
+		21036C3826E5CA3100720B39 /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036C3726E5CA3100720B39 /* FormTableViewCell.swift */; };
 		90D9C0E145A8C823BC06E207 /* Pods_InstaMeAppNextGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		21036C3126E08F5E00720B39 /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		21036C3326E08F7D00720B39 /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
 		21036C3526E08FA300720B39 /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
+		21036C3726E5CA3100720B39 /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		91DF6E34AE07958BEF7AAECF /* Pods-InstaMeAppNextGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaMeAppNextGen.release.xcconfig"; path = "Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen.release.xcconfig"; sourceTree = "<group>"; };
 		AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaMeAppNextGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				21036C3026E08F3B00720B39 /* HomeFeed */,
+				21036C3726E5CA3100720B39 /* FormTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21036C3626E08FA300720B39 /* IGFeedPostGeneralTableViewCell.swift in Sources */,
+				21036C3826E5CA3100720B39 /* FormTableViewCell.swift in Sources */,
 				21036BF726D4AB6300720B39 /* DatabaseManager.swift in Sources */,
 				21036BEA26D437BA00720B39 /* EditProfileViewController.swift in Sources */,
 				21036BE626D436C500720B39 /* LoginViewController.swift in Sources */,
