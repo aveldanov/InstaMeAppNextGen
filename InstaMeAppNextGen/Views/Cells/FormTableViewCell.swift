@@ -9,6 +9,9 @@ import UIKit
 
 class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
 
+    static let identifier = "FormTableViewCell"
+
+    
     private let formLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label

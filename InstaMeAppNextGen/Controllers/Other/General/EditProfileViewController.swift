@@ -18,7 +18,7 @@ final class EditProfileViewController: UIViewController {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(FormTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(FormTableViewCell.self, forCellReuseIdentifier: FormTableViewCell.identifier)
         return tableView
     }()
     
