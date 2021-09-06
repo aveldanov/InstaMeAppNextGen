@@ -9,7 +9,7 @@ import UIKit
 // Return value to view controller
 // AnyObject - any Instance
 protocol FormTableViewDelegate: AnyObject {
-    func formTableViewCell(_ cell: FormTableViewCell, didUpdateTextField updatedModel: EditProfileFormModel?)
+    func formTableViewCell(_ cell: FormTableViewCell, didUpdateTextField updatedModel: EditProfileFormModel)
 }
 
 
@@ -18,6 +18,8 @@ class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
     static let identifier = "FormTableViewCell"
 
     public weak var delegate: FormTableViewDelegate?
+    
+    private var model: EditProfileFormModel?
     
     private let formLabel: UILabel = {
         let label = UILabel()
@@ -82,6 +84,10 @@ class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
      //MARK: textField
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        model?.value = textField.text
+        guard  let model = model else {
+            return true
+        }
         
         delegate?.formTableViewCell(self, didUpdateTextField: model)
         

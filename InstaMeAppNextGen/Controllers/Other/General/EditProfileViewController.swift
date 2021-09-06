@@ -76,7 +76,7 @@ final class EditProfileViewController: UIViewController {
 
     @objc private func didTapSave(){
         // save info to database
-        
+        dismiss(animated: true, completion: nil)
     }
     
     @objc private func didTapCancel(){
@@ -116,16 +116,8 @@ final class EditProfileViewController: UIViewController {
 }
 
 
-extension EditProfileViewController: UITableViewDataSource, FormTableViewDelegate{
-    
-    // Cell Delegate
-    func formTableViewCell(_ cell: FormTableViewCell, didUpdateTextField value: String?) {
-//        print("Field updated to: \(value ?? "nil")")
-        //update model
-        
-        
-    }
-    
+extension EditProfileViewController: UITableViewDataSource{
+
     //MARK: TableView
     
     
@@ -172,4 +164,18 @@ extension EditProfileViewController: UITableViewDataSource, FormTableViewDelegat
         return "Private Information"
     }
 
+}
+
+
+extension EditProfileViewController: FormTableViewDelegate{
+    
+    
+    // Cell Delegate
+    func formTableViewCell(_ cell: FormTableViewCell, didUpdateTextField updatedModel: EditProfileFormModel) {
+        print("Field updated to: \(updatedModel.value ?? "nil")")
+        //update model
+        
+    }
+    
+    
 }

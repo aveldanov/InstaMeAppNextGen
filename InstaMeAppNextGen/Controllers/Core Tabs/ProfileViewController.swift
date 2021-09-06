@@ -24,6 +24,17 @@ final class ProfileViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: view.width/3, height: view.width/3)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        collectionView?.backgroundColor = .red
+        
+        //cell
+        collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+        
+        //Headers
+        collectionView?.register(ProfleInfoHeaderCollectionReusableView, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProfleInfoHeaderCollectionReusableView.identifier)
+        
+        
+        
         collectionView?.delegate = self
         collectionView?.dataSource = self
         guard let collectionView = collectionView else {
