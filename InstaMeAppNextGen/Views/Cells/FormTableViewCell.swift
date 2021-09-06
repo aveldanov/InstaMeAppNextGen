@@ -34,6 +34,7 @@ class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
         contentView.addSubview(formLabel)
         contentView.addSubview(textField)
         textField.delegate = self
+        selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {
