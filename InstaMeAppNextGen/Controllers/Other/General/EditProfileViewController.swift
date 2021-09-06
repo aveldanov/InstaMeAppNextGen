@@ -116,7 +116,16 @@ final class EditProfileViewController: UIViewController {
 }
 
 
-extension EditProfileViewController: UITableViewDataSource{
+extension EditProfileViewController: UITableViewDataSource, FormTableViewDelegate{
+    
+    // Cell Delegate
+    func formTableViewCell(_ cell: FormTableViewCell, didUpdateTextField value: String?) {
+//        print("Field updated to: \(value ?? "nil")")
+        //update model
+        
+        
+    }
+    
     //MARK: TableView
     
     
@@ -148,6 +157,8 @@ extension EditProfileViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FormTableViewCell.identifier, for: indexPath) as! FormTableViewCell
         let model = models[indexPath.section][indexPath.row]
+        
+        cell.delegate = self
         cell.configureCell(with: model)
         return cell
     }

@@ -7,9 +7,9 @@
 
 import UIKit
 // Return value to view controller
-
-protocol FormTableViewDelegate {
-    func formTableViewCell(_ cell: FormTableViewCell, didUpdateTextField value: String?)
+// AnyObject - any Instance
+protocol FormTableViewDelegate: AnyObject {
+    func formTableViewCell(_ cell: FormTableViewCell, didUpdateTextField updatedModel: EditProfileFormModel?)
 }
 
 
@@ -17,6 +17,7 @@ class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
 
     static let identifier = "FormTableViewCell"
 
+    public weak var delegate: FormTableViewDelegate?
     
     private let formLabel: UILabel = {
         let label = UILabel()
@@ -48,11 +49,10 @@ class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
     public func configureCell(with model: EditProfileFormModel){
-        
+        self.model = model
         formLabel.text = model.label
         textField.placeholder = model.placeholder
         textField.text = model.value
-        
     }
     
     override func prepareForReuse() {
@@ -82,6 +82,9 @@ class FormTableViewCell: UITableViewCell, UITextFieldDelegate {
      //MARK: textField
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        delegate?.formTableViewCell(self, didUpdateTextField: model)
+        
         textField.resignFirstResponder()//get rids of keyboard on Enter
         return true
     }
