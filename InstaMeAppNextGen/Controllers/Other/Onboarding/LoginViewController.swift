@@ -234,7 +234,7 @@ class LoginViewController: UIViewController {
                     // error
                     let alert = UIAlertController(title: "Login Error", message: "Were not able to login", preferredStyle: .alert)
                     
-                    alert.addAction(UIAlertAction(title: "Dismiis", style: .cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
             }
