@@ -5,12 +5,17 @@
 //  Created by Anton Veldanov on 9/5/21.
 //
 
+import SDWebImage
 import UIKit
+
 
 class PhotoCollectionViewCell: UICollectionViewCell {
     static let identifier = "PhotoCollectionViewCell"
     private let photoImageView: UIImageView = {
         let imageView = UIImageView()
+        
+        
+        
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         
@@ -34,6 +39,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        contentView.backgroundColor = .secondarySystemBackground
         contentView.addSubview(photoImageView)
         contentView.clipsToBounds = true
         
@@ -46,13 +52,20 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configure(with model: String){
-        
-        
+    
+    /// Using SDWebImage CocoaPod to deal with Image Caching
+    public func configure(with model: UserPost){
+        // CONVENTIONAL WAY TO LOAD
+//        URLSession.shared.dataTask(with: thumbNailURL) { data, response, error in
+//            photoImageView.image = UIImage(data: data!)
+//        }
+        let url = model.thumbNailImageURL
+        photoImageView.sd_setImage(with: url, completed: nil)
+
     }
     
     // test purpose
-    public func configure(with imageName: String){
+    public func configure(debug imageName: String){
         photoImageView.image = UIImage(named: imageName)
         
     }

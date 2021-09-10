@@ -8,7 +8,7 @@ target 'InstaMeAppNextGen' do
   # Pods for InstaMeAppNextGen
 
 pod 'Appirater'
-
+pod 'SDWebImage'
 
 #Firebase
 
