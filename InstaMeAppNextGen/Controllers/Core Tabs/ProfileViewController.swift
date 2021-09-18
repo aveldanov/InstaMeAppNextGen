@@ -30,7 +30,6 @@ final class ProfileViewController: UIViewController {
         layout.itemSize = CGSize(width: size, height: size)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
-        collectionView?.backgroundColor = .red
         
         //cell
         collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
