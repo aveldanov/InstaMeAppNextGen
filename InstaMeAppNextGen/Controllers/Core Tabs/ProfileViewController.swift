@@ -88,7 +88,6 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             return 0
         }
         
-        
 //        return userPosts.count
         return 30
     }
@@ -96,7 +95,10 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+        let model = userPosts[indexPath.row]
+
         
+        cell.configure(with: model)
         cell.configure(debug: "test")
         
         return cell
@@ -107,6 +109,8 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         collectionView.deselectItem(at: indexPath, animated: true)
         
         // get the model and open host controller
+        
+        let model = userPosts[indexPath.row]
         
         let vc = PostViewController()
         vc.title = "Post"
