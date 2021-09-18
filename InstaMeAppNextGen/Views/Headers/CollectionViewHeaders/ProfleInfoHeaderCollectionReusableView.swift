@@ -7,8 +7,18 @@
 
 import UIKit
 
-class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
+protocol ProfleInfoHeaderCollectionReusableViewDelegate: AnyObject {
+    
+    
+    
+    
+}
+
+final class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
     static let identifier = "ProfleInfoHeaderCollectionReusableView"
+    
+    public weak var delegate: ProfleInfoHeaderCollectionReusableViewDelegate?
+
     
     private let profilePhotoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -21,6 +31,7 @@ class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
     private let postsButton: UIButton = {
         let button = UIButton()
         button.setTitle("Posts", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .secondarySystemBackground
         return button
     }()
@@ -28,6 +39,8 @@ class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
     private let followersButton: UIButton = {
         let button = UIButton()
         button.setTitle("Followers", for: .normal)
+        button.setTitleColor(.label, for: .normal)
+
         button.backgroundColor = .secondarySystemBackground
         return button
     }()
@@ -35,6 +48,8 @@ class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
     private let follwoingButton: UIButton = {
         let button = UIButton()
         button.setTitle("Following", for: .normal)
+        button.setTitleColor(.label, for: .normal)
+
         button.backgroundColor = .secondarySystemBackground
         return button
     }()
@@ -42,6 +57,8 @@ class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
     private let editProfileButton: UIButton = {
         let button = UIButton()
         button.setTitle("Edit Your Profile", for: .normal)
+        button.setTitleColor(.label, for: .normal)
+
         button.backgroundColor = .secondarySystemBackground
         return button
     }()
