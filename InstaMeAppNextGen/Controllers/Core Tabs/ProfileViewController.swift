@@ -95,10 +95,10 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
-        let model = userPosts[indexPath.row]
+//        let model = userPosts[indexPath.row]
 
         
-        cell.configure(with: model)
+//        cell.configure(with: model)
         cell.configure(debug: "test")
         
         return cell

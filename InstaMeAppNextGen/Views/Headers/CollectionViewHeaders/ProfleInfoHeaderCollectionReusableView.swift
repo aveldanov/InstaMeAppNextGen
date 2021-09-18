@@ -12,32 +12,37 @@ class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
     
     private let profilePhotoImageView: UIImageView = {
         let imageView = UIImageView()
-        
+        imageView.backgroundColor = .red
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
     
-    private let postsButtom: UIButton = {
+    private let postsButton: UIButton = {
         let button = UIButton()
-        
+        button.setTitle("Posts", for: .normal)
+        button.backgroundColor = .secondarySystemBackground
         return button
     }()
     
     private let followersButton: UIButton = {
         let button = UIButton()
-        
+        button.setTitle("Followers", for: .normal)
+        button.backgroundColor = .secondarySystemBackground
         return button
     }()
     
     private let follwoingButton: UIButton = {
         let button = UIButton()
-        
+        button.setTitle("Following", for: .normal)
+        button.backgroundColor = .secondarySystemBackground
         return button
     }()
     
     private let editProfileButton: UIButton = {
         let button = UIButton()
-        
+        button.setTitle("Edit Your Profile", for: .normal)
+        button.backgroundColor = .secondarySystemBackground
         return button
     }()
     
@@ -47,7 +52,7 @@ class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
         return label
     }()
     
-    private let nameLabel: UILabel = {
+    private let bioLabel: UILabel = {
         let label = UILabel()
         
         return label
@@ -59,8 +64,23 @@ class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .systemBlue
+        
+        addSubviews()
+        
+        
+        backgroundColor = .systemBackground
         clipsToBounds = true
+    }
+    
+    
+    private func addSubviews(){
+        addSubview(profilePhotoImageView)
+        addSubview(postsButton)
+        addSubview(followersButton)
+        addSubview(follwoingButton)
+        addSubview(editProfileButton)
+        addSubview(nameLabel)
+        addSubview(bioLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -71,6 +91,41 @@ class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        let profilePhotoSize = width/4
+        //integral rounds down numbers
+        profilePhotoImageView.frame = CGRect(
+            x: 5,
+            y: 5,
+            width: profilePhotoSize,
+            height: profilePhotoSize).integral
+        
+        profilePhotoImageView.layer.cornerRadius = profilePhotoSize/2.0
+        let countsButtonHeight = profilePhotoSize/2
+        let countsButtonWidth = (width-10-profilePhotoSize)/3
+        
+        postsButton.frame = CGRect(
+            x: profilePhotoImageView.right,
+            y: 5,
+            width: countsButtonWidth,
+            height: countsButtonHeight).integral
+        
+        followersButton.frame = CGRect(
+            x: postsButton.right,
+            y: 5,
+            width: countsButtonWidth,
+            height: countsButtonHeight).integral
+        
+        follwoingButton.frame = CGRect(
+            x: followersButton.right,
+            y: 5,
+            width: countsButtonWidth,
+            height: countsButtonHeight).integral
+        
+        editProfileButton.frame = CGRect(
+            x: profilePhotoImageView.right,
+            y: 5 + countsButtonHeight,
+            width: countsButtonWidth*3,
+            height: countsButtonHeight).integral
     }
 
     
