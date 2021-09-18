@@ -12,7 +12,7 @@ final class ProfileViewController: UIViewController {
 
     private var collectionView: UICollectionView?
     
-    
+    private var userPosts = [UserPost]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +87,9 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         if section == 0{
             return 0
         }
+        
+        
+//        return userPosts.count
         return 30
     }
     
@@ -102,6 +105,13 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        
+        // get the model and open host controller
+        
+        let vc = PostViewController()
+        vc.title = "Post"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
