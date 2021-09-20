@@ -186,7 +186,6 @@ final class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
         delegate?.profileHeaderDidTapFollowersButton(self)
     }
 
-    
     @objc private func didTapFollowingButton(){
         delegate?.profileHeaderDidTapFollowingButton(self)
     }

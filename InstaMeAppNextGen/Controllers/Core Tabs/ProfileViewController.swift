@@ -53,7 +53,6 @@ final class ProfileViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         collectionView?.frame = view.bounds
-        
     }
     
     
@@ -64,7 +63,6 @@ final class ProfileViewController: UIViewController {
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(didTapSettingsButton))
-        
     }
     
     @objc func didTapSettingsButton(){
@@ -165,14 +163,14 @@ extension ProfileViewController: ProfleInfoHeaderCollectionReusableViewDelegate{
     }
     
     func profileHeaderDidTapFollowersButton(_ header: ProfleInfoHeaderCollectionReusableView) {
-        let vc = ListViewController()
+        let vc = ListViewController(data: ["Anton","Joe"])
         vc.title = "Followers"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileHeaderDidTapFollowingButton(_ header: ProfleInfoHeaderCollectionReusableView) {
-        let vc = ListViewController()
+        let vc = ListViewController(data: ["Anton2","Joe2","Vanya2"])
         vc.title = "Following"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
