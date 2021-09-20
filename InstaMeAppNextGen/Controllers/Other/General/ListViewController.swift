@@ -37,6 +37,11 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
 
 
 }
@@ -63,6 +68,10 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        //Go to profile of selected cell
+        
+        let model = data[indexPath.row]
         
     }
 
