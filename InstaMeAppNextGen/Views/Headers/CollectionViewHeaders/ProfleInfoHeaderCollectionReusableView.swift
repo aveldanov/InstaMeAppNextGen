@@ -8,8 +8,11 @@
 import UIKit
 
 protocol ProfleInfoHeaderCollectionReusableViewDelegate: AnyObject {
-    
-    
+    func profileHeaderDidTapPostsButton(_ header: ProfleInfoHeaderCollectionReusableView)
+    func profileHeaderDidTapFollowersButton(_ header: ProfleInfoHeaderCollectionReusableView)
+    func profileHeaderDidTapFollowingButton(_ header: ProfleInfoHeaderCollectionReusableView)
+    func profileHeaderDidTapEditProfileButton(_ header: ProfleInfoHeaderCollectionReusableView)
+
     
     
 }
@@ -45,7 +48,7 @@ final class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
         return button
     }()
     
-    private let follwoingButton: UIButton = {
+    private let followingButton: UIButton = {
         let button = UIButton()
         button.setTitle("Following", for: .normal)
         button.setTitleColor(.label, for: .normal)
@@ -65,13 +68,18 @@ final class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        
+        label.text = "Anton V"
+        label.textColor = .label
+        label.numberOfLines = 1
         return label
     }()
     
     private let bioLabel: UILabel = {
         let label = UILabel()
-        
+        label.text = "This is a first account!"
+
+        label.textColor = .label
+        label.numberOfLines = 0 //line wrap
         return label
     }()
     
@@ -83,7 +91,7 @@ final class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
         
         
         addSubviews()
-        
+        addButtonActions()
         
         backgroundColor = .systemBackground
         clipsToBounds = true
@@ -94,10 +102,17 @@ final class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
         addSubview(profilePhotoImageView)
         addSubview(postsButton)
         addSubview(followersButton)
-        addSubview(follwoingButton)
+        addSubview(followingButton)
         addSubview(editProfileButton)
         addSubview(nameLabel)
         addSubview(bioLabel)
+    }
+    
+    private func addButtonActions(){
+        followersButton.addTarget(self, action: #selector(didTapFollowersButton), for: .touchUpInside)
+        followingButton.addTarget(self, action: #selector(didTapFollowingButton), for: .touchUpInside)
+        postsButton.addTarget(self, action: #selector(didTapPostsButton), for: .touchUpInside)
+        editProfileButton.addTarget(self, action: #selector(didTapEditProfileButton), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -132,7 +147,7 @@ final class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
             width: countsButtonWidth,
             height: countsButtonHeight).integral
         
-        follwoingButton.frame = CGRect(
+        followingButton.frame = CGRect(
             x: followersButton.right,
             y: 5,
             width: countsButtonWidth,
@@ -143,7 +158,45 @@ final class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {
             y: 5 + countsButtonHeight,
             width: countsButtonWidth*3,
             height: countsButtonHeight).integral
+        
+        
+        nameLabel.frame = CGRect(
+            x: 5,
+            y: 5 + profilePhotoImageView.bottom,
+            width: width-10,
+            height: 50).integral
+        
+        
+        let bioLabelSize = bioLabel.sizeThatFits(frame.size)
+        
+        
+        bioLabel.frame = CGRect(
+            x: 5,
+            y: 5 + nameLabel.bottom,
+            width: width-10,
+            height: bioLabelSize.height).integral
+
+    }
+    
+    
+     //MARK: Actions
+    
+    
+    @objc private func didTapFollowersButton(){
+        delegate?.profileHeaderDidTapFollowersButton(self)
     }
 
+    
+    @objc private func didTapFollowingButton(){
+        delegate?.profileHeaderDidTapFollowingButton(self)
+    }
+    
+    @objc private func didTapPostsButton(){
+        delegate?.profileHeaderDidTapPostsButton(self)
+    }
+    
+    @objc private func didTapEditProfileButton(){
+        delegate?.profileHeaderDidTapEditProfileButton(self)
+    }
     
 }
