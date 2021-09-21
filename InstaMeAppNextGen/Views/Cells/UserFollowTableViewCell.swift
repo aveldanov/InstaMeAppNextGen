@@ -63,6 +63,9 @@ class UserFollowTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        profileImageView.frame = CGRect(x: <#T##CGFloat#>, y: 3, width: <#T##CGFloat#>, height: contentView.height - 6)
+        
     }
     
     override func prepareForReuse() {
