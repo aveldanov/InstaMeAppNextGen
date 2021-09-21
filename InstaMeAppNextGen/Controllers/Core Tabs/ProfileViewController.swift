@@ -50,7 +50,6 @@ final class ProfileViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         collectionView?.frame = view.bounds
     }
     
