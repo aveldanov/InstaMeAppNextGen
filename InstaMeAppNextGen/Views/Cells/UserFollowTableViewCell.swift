@@ -77,7 +77,6 @@ class UserFollowTableViewCell: UITableViewCell {
         let buttonWidth = contentView.width > 500 ? 220.0 : contentView.width
         
         
-        
         let labelHeight = contentView.height/2
         nameLabel.frame = CGRect(x: profileImageView.right+5,
                                  y: 0,
