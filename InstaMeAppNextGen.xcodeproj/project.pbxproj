@@ -226,6 +226,7 @@
 		21036C2D26DEE79200720B39 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				21DE3D6926FFB0C500054D7F /* Notifications */,
 				21036C3026E08F3B00720B39 /* HomeFeed */,
 				21036C3726E5CA3100720B39 /* FormTableViewCell.swift */,
 				21036C3B26E5D65D00720B39 /* PhotoCollectionViewCell.swift */,
@@ -260,6 +261,13 @@
 				21036C3F26E5D6E200720B39 /* ProfileTabsCollectionReusableView.swift */,
 			);
 			path = CollectionViewHeaders;
+			sourceTree = "<group>";
+		};
+		21DE3D6926FFB0C500054D7F /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		D091E9500FEB5772968EFC31 /* Frameworks */ = {
