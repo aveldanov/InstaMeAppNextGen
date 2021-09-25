@@ -7,13 +7,26 @@
 
 import UIKit
 
-class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+
+struct UserNotification{
+    let type: UserNotificationType
+    let text: String
+    let user: User
+    
+}
+enum UserNotificationType{
+    case like(post: UserPost) // like associated with a post
+    case follow
+}
+
+final class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.isHidden = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        tableView.register(NotificationFollowEventTableViewCell.self, forCellReuseIdentifier: NotificationFollowEventTableViewCell.identifier)
+        tableView.register(NotificationLikeEventTableViewCell.self, forCellReuseIdentifier: NotificationLikeEventTableViewCell.identifier)
         return tableView
     }()
     
@@ -29,6 +42,11 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     }()
     
     
+    private var models = [UserNotification]()
+    
+    
+     //MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Notifications"
@@ -38,6 +56,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        fetchNotifications()
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,6 +79,33 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                                            height: view.width/4)
         noNotificationsView.center = view.center
     }
+    
+    
+    private func fetchNotifications(){
+        for i in 0..<100{
+            let post = UserPost(postID: "",
+                                postType: .photo,
+                                thumbNailImageURL: URL(string: "https://www.yahoo.com")!,
+                                postURL: URL(string: "https://www.yahoo.com")!,
+                                caption: nil,
+                                likeCount: [],
+                                comments: [],
+                                createdDate: Date(),
+                                taggedUsers: [])
+            let model = UserNotification(type: i%2 == 0 ? .like(post: post): .follow,
+                                         text: "Notific",
+                                         user: User(username: "@anton",
+                                                    bio: "",
+                                                    name: (first: "Anton", last: "V"),
+                                                    profilePhoto: URL(string: "https://www.google.com")!,
+                                                    birthDate: Date(),
+                                                    gender: .other,
+                                                    counts: UserCount(followers: 1, following: 1, posts: 1),
+                                                    joinDate: Date()))
+            
+        }
+    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

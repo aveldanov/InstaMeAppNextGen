@@ -41,6 +41,8 @@
 		2107F71226EC31DB00200882 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2107F71126EC31DB00200882 /* Models.swift */; };
 		21D0220526F9B1890009984F /* UserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D0220426F9B1890009984F /* UserFollowTableViewCell.swift */; };
 		21DE3D3B26FF0D6800054D7F /* NoNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DE3D3A26FF0D6800054D7F /* NoNotificationsView.swift */; };
+		21DE3D6B26FFB0FE00054D7F /* NotificationFollowEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DE3D6A26FFB0FE00054D7F /* NotificationFollowEventTableViewCell.swift */; };
+		21DE3D6D26FFB11900054D7F /* NotificationLikeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DE3D6C26FFB11900054D7F /* NotificationLikeEventTableViewCell.swift */; };
 		90D9C0E145A8C823BC06E207 /* Pods_InstaMeAppNextGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,8 @@
 		2107F71126EC31DB00200882 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../../../../FlowerClass/Models.swift; sourceTree = "<group>"; };
 		21D0220426F9B1890009984F /* UserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		21DE3D3A26FF0D6800054D7F /* NoNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNotificationsView.swift; sourceTree = "<group>"; };
+		21DE3D6A26FFB0FE00054D7F /* NotificationFollowEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFollowEventTableViewCell.swift; sourceTree = "<group>"; };
+		21DE3D6C26FFB11900054D7F /* NotificationLikeEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationLikeEventTableViewCell.swift; sourceTree = "<group>"; };
 		91DF6E34AE07958BEF7AAECF /* Pods-InstaMeAppNextGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaMeAppNextGen.release.xcconfig"; path = "Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen.release.xcconfig"; sourceTree = "<group>"; };
 		AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaMeAppNextGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -266,6 +270,8 @@
 		21DE3D6926FFB0C500054D7F /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				21DE3D6A26FFB0FE00054D7F /* NotificationFollowEventTableViewCell.swift */,
+				21DE3D6C26FFB11900054D7F /* NotificationLikeEventTableViewCell.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -410,6 +416,7 @@
 				21D0220526F9B1890009984F /* UserFollowTableViewCell.swift in Sources */,
 				21036C3426E08F7D00720B39 /* IGFeedPostActionsTableViewCell.swift in Sources */,
 				21036C3C26E5D65D00720B39 /* PhotoCollectionViewCell.swift in Sources */,
+				21DE3D6B26FFB0FE00054D7F /* NotificationFollowEventTableViewCell.swift in Sources */,
 				21036BFB26D4AC8A00720B39 /* StorageManager.swift in Sources */,
 				21036BD926D4360100720B39 /* ExploreViewController.swift in Sources */,
 				21036BDB26D4362D00720B39 /* CameraViewController.swift in Sources */,
@@ -421,6 +428,7 @@
 				21036BDD26D4364600720B39 /* NotificationsViewController.swift in Sources */,
 				21036C3E26E5D6B300720B39 /* ProfleInfoHeaderCollectionReusableView.swift in Sources */,
 				21036BF026D437F800720B39 /* SearchResultViewController.swift in Sources */,
+				21DE3D6D26FFB11900054D7F /* NotificationLikeEventTableViewCell.swift in Sources */,
 				21036BDF26D4365C00720B39 /* ProfileViewController.swift in Sources */,
 				21DE3D3B26FF0D6800054D7F /* NoNotificationsView.swift in Sources */,
 				21036C2F26DEE7B800720B39 /* IGFeedPostTableViewCell.swift in Sources */,
