@@ -83,7 +83,6 @@ class UserFollowTableViewCell: UITableViewCell {
         
         delegate?.didTapFollowUnfollowButton(model: model)
         
-        
     }
     
     
