@@ -12,9 +12,6 @@ protocol ProfleInfoHeaderCollectionReusableViewDelegate: AnyObject {
     func profileHeaderDidTapFollowersButton(_ header: ProfleInfoHeaderCollectionReusableView)
     func profileHeaderDidTapFollowingButton(_ header: ProfleInfoHeaderCollectionReusableView)
     func profileHeaderDidTapEditProfileButton(_ header: ProfleInfoHeaderCollectionReusableView)
-
-    
-    
 }
 
 final class ProfleInfoHeaderCollectionReusableView: UICollectionReusableView {

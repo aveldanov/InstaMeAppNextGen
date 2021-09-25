@@ -21,6 +21,8 @@ class UserFollowTableViewCell: UITableViewCell {
     
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.masksToBounds = true
+        imageView.backgroundColor = .secondarySystemBackground
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -63,9 +65,26 @@ class UserFollowTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        profileImageView.layer.cornerRadius = 5
+        profileImageView.frame = CGRect(x: 3,
+                                        y: 3,
+                                        width: contentView.height - 6,
+                                        height: contentView.height - 6)
+        profileImageView.layer.cornerRadius = profileImageView.height/2.0
+
+        let buttonWidth = contentView.width > 500 ? 220.0 : contentView.width
         
-        profileImageView.frame = CGRect(x: <#T##CGFloat#>, y: 3, width: <#T##CGFloat#>, height: contentView.height - 6)
         
+        
+        let labelHeight = contentView.height/2
+        nameLabel.frame = CGRect(x: profileImageView.right+5,
+                                 y: 0,
+                                 width: contentView.width-3-profileImageView.width,
+                                 height: labelHeight)
+        usernameLabel.frame = CGRect(x: profileImageView.right+5,
+                                     y: nameLabel.bottom,
+                                 width: contentView.width-3-profileImageView.width,
+                                 height: labelHeight)
     }
     
     override func prepareForReuse() {
