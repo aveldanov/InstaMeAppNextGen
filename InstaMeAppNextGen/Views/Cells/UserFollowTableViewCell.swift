@@ -91,11 +91,11 @@ class UserFollowTableViewCell: UITableViewCell {
         let labelHeight = contentView.height/2
         nameLabel.frame = CGRect(x: profileImageView.right+5,
                                  y: 0,
-                                 width: contentView.width-3-profileImageView.width-buttonWidth,
+                                 width: contentView.width-8-profileImageView.width-buttonWidth,
                                  height: labelHeight)
         usernameLabel.frame = CGRect(x: profileImageView.right+5,
                                      y: nameLabel.bottom,
-                                 width: contentView.width-3-profileImageView.width-buttonWidth,
+                                 width: contentView.width-8-profileImageView.width-buttonWidth,
                                  height: labelHeight)
     }
     
