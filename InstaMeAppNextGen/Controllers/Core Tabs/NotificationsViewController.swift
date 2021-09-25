@@ -45,14 +45,14 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
     private var models = [UserNotification]()
     
     
-     //MARK: Lifecycle
+    //MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Notifications"
         view.backgroundColor = .systemBackground
         view.addSubview(spinner)
-//        spinner.startAnimating()
+        //        spinner.startAnimating()
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -102,19 +102,33 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
                                                     gender: .other,
                                                     counts: UserCount(followers: 1, following: 1, posts: 1),
                                                     joinDate: Date()))
-            
+            models.append(model)
         }
     }
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return models.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        return cell
+        let model = models[indexPath.row]
+        switch model.type{
+        case .like(_):
+            // like cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: NotificationLikeEventTableViewCell.identifier, for: indexPath) as! NotificationLikeEventTableViewCell
+            cell.configure(with: model)
+            return cell
+            
+        case .follow:
+            // follow cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: NotificationFollowEventTableViewCell.identifier, for: indexPath) as! NotificationFollowEventTableViewCell
+            
+            //            cell.configure(with: model)
+            
+            return cell
+        }
     }
     
 }
