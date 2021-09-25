@@ -17,7 +17,7 @@ struct UserNotification{
 }
 enum UserNotificationType{
     case like(post: UserPost) // like associated with a post
-    case follow
+    case follow(state: FollowState)
 }
 
 final class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -92,7 +92,7 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
                                 comments: [],
                                 createdDate: Date(),
                                 taggedUsers: [])
-            let model = UserNotification(type: i%2 == 0 ? .like(post: post): .follow,
+            let model = UserNotification(type: i%2 == 0 ? .like(post: post): .follow(state: .not_following),
                                          text: "Notific",
                                          user: User(username: "@anton",
                                                     bio: "",
@@ -126,7 +126,7 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
             // follow cell
             let cell = tableView.dequeueReusableCell(withIdentifier: NotificationFollowEventTableViewCell.identifier, for: indexPath) as! NotificationFollowEventTableViewCell
             cell.delegate = self
-            cell.configure(with: model)
+//            cell.configure(with: model)
             
             return cell
         }

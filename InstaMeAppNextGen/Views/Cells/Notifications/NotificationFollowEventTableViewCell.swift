@@ -34,12 +34,13 @@ class NotificationFollowEventTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .label
         label.numberOfLines = 0
-        label.text = "@Joe started following you."
+        label.text = "@Joe started followed you."
         return label
     }()
     
     private let followButton: UIButton = {
         let button = UIButton()
+        button.backgroundColor = .red
         return button
     }()
     
@@ -70,6 +71,22 @@ class NotificationFollowEventTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        profileImageView.frame = CGRect(x: 3,
+                                        y: 3,
+                                        width: contentView.height-6,
+                                        height: contentView.height-6)
+        profileImageView.layer.cornerRadius = profileImageView.height/2
+        
+        let size: CGFloat = 100
+        followButton.frame = CGRect(x: contentView.width-5-size,
+                                    y: (contentView.height-44)/2,
+                                  width: size,
+                                  height: 44)
+        
+        label.frame = CGRect(x: profileImageView.right+5,
+                             y: 0,
+                             width: contentView.width-size-profileImageView.width-16,
+                             height: contentView.height)
         
     }
     
@@ -92,13 +109,35 @@ class NotificationFollowEventTableViewCell: UITableViewCell {
         switch model.type{
         case .like(_):
            break
-        case .follow:
+        case .follow(let state):
             // configure button
-            break
+            switch state {
+            case .following:
+                // show unfollow button
+                configureForFollow()
+            case .not_following:
+                // show follow button
+                configureForUnfollowFollow()
+
+            }
         }
         
         label.text = model.text
         profileImageView.sd_setImage(with: model.user.profilePhoto, completed: nil)
+    }
+    
+    private func configureForFollow(){
+        followButton.setTitle("Unfollow", for: .normal)
+        followButton.setTitleColor(.label, for: .normal)
+        followButton.layer.borderWidth = 1
+        followButton.layer.borderColor = UIColor.secondaryLabel.cgColor
+    }
+    
+    private func configureForUnfollowFollow(){
+        followButton.setTitle("Follow", for: .normal)
+        followButton.setTitleColor(.white, for: .normal)
+        followButton.layer.borderWidth = 0
+        followButton.backgroundColor = .link
     }
     
     
