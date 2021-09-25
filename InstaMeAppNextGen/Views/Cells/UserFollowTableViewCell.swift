@@ -30,6 +30,7 @@ class UserFollowTableViewCell: UITableViewCell {
     
     public weak var delegate: UserFollowTableViewCellDelegate?
     
+    private var model: UserRelationship?
     
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -80,7 +81,9 @@ class UserFollowTableViewCell: UITableViewCell {
      //MARK: Actions
     
     @objc func didTapFollowButton(){
-        
+        guard let model = model{
+            return
+        }
         delegate?.didTapFollowUnfollowButton(model: model)
         
     }
