@@ -8,6 +8,7 @@
 import UIKit
 
 class NotificationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     private let tableView: UITableView = {
        let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -35,7 +36,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         noNotificationsView.frame = CGRect(x: 0,
                                            y: 0,
                                            width: view.width/2,
-                                           height: view.width/2)
+                                           height: view.width/4)
         noNotificationsView.center = view.center
     }
 
