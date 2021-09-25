@@ -73,7 +73,21 @@ class UserFollowTableViewCell: UITableViewCell {
         contentView.addSubview(usernameLabel)
         contentView.addSubview(followButton)
         
+        followButton.addTarget(self, action: #selector(didTapFollowButton), for: .touchUpInside)
+        
     }
+    
+     //MARK: Actions
+    
+    @objc func didTapFollowButton(){
+        
+        delegate?.didTapFollowUnfollowButton(model: model)
+        
+        
+    }
+    
+    
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
