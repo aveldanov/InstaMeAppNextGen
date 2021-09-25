@@ -13,10 +13,10 @@
         <scene sceneID="RWO-pg-2fq">
             <objects>
                 <tabBarController id="SWc-vS-kHt" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qla-mT-9mh">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="qla-mT-9mh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -58,7 +58,7 @@
             <objects>
                 <viewController id="gy8-jm-drb" customClass="HomeViewController" customModule="InstaMeAppNextGen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Gi-Bi-QXU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vtk-OE-KXu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -142,7 +142,7 @@
             <objects>
                 <viewController id="Bam-3m-xOi" customClass="ExploreViewController" customModule="InstaMeAppNextGen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nhQ-Hd-k5k">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="2aK-jS-hIa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -158,7 +158,7 @@
             <objects>
                 <viewController id="7FA-6k-zzL" customClass="CameraViewController" customModule="InstaMeAppNextGen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g0Y-87-80g">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="tIf-1c-Hi2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -174,7 +174,7 @@
             <objects>
                 <viewController id="F5W-te-Fb2" customClass="NotificationsViewController" customModule="InstaMeAppNextGen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="45U-MY-SX5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="MSf-l0-7ph"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -190,7 +190,7 @@
             <objects>
                 <viewController id="a2p-RK-8Z9" customClass="ProfileViewController" customModule="InstaMeAppNextGen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qYs-Tk-LiF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="aNF-h8-HXC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

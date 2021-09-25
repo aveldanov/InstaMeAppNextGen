@@ -74,6 +74,7 @@ class UserFollowTableViewCell: UITableViewCell {
         contentView.addSubview(usernameLabel)
         contentView.addSubview(followButton)
         
+        selectionStyle = .none
         followButton.addTarget(self, action: #selector(didTapFollowButton), for: .touchUpInside)
         
     }
@@ -81,7 +82,7 @@ class UserFollowTableViewCell: UITableViewCell {
      //MARK: Actions
     
     @objc func didTapFollowButton(){
-        guard let model = model{
+        guard let model = model else{
             return
         }
         delegate?.didTapFollowUnfollowButton(model: model)

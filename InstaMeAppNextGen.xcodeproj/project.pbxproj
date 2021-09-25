@@ -40,6 +40,7 @@
 		21036C4026E5D6E200720B39 /* ProfileTabsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036C3F26E5D6E200720B39 /* ProfileTabsCollectionReusableView.swift */; };
 		2107F71226EC31DB00200882 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2107F71126EC31DB00200882 /* Models.swift */; };
 		21D0220526F9B1890009984F /* UserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D0220426F9B1890009984F /* UserFollowTableViewCell.swift */; };
+		21DE3D3B26FF0D6800054D7F /* NoNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DE3D3A26FF0D6800054D7F /* NoNotificationsView.swift */; };
 		90D9C0E145A8C823BC06E207 /* Pods_InstaMeAppNextGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		21036C3F26E5D6E200720B39 /* ProfileTabsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsCollectionReusableView.swift; sourceTree = "<group>"; };
 		2107F71126EC31DB00200882 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../../../../FlowerClass/Models.swift; sourceTree = "<group>"; };
 		21D0220426F9B1890009984F /* UserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowTableViewCell.swift; sourceTree = "<group>"; };
+		21DE3D3A26FF0D6800054D7F /* NoNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNotificationsView.swift; sourceTree = "<group>"; };
 		91DF6E34AE07958BEF7AAECF /* Pods-InstaMeAppNextGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaMeAppNextGen.release.xcconfig"; path = "Target Support Files/Pods-InstaMeAppNextGen/Pods-InstaMeAppNextGen.release.xcconfig"; sourceTree = "<group>"; };
 		AD266EDA18F69E5F41CAE963 /* Pods_InstaMeAppNextGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaMeAppNextGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 				21036C2D26DEE79200720B39 /* Cells */,
 				21036BC826D32B9400720B39 /* Assets.xcassets */,
 				21036BD726D434C100720B39 /* Storyboards */,
+				21DE3D3A26FF0D6800054D7F /* NoNotificationsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				21036C3E26E5D6B300720B39 /* ProfleInfoHeaderCollectionReusableView.swift in Sources */,
 				21036BF026D437F800720B39 /* SearchResultViewController.swift in Sources */,
 				21036BDF26D4365C00720B39 /* ProfileViewController.swift in Sources */,
+				21DE3D3B26FF0D6800054D7F /* NoNotificationsView.swift in Sources */,
 				21036C2F26DEE7B800720B39 /* IGFeedPostTableViewCell.swift in Sources */,
 				21036BFD26D4B09200720B39 /* Extenstions.swift in Sources */,
 				21036BC026D32B9300720B39 /* AppDelegate.swift in Sources */,
