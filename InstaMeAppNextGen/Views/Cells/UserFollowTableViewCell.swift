@@ -66,10 +66,12 @@ class UserFollowTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         profileImageView.layer.cornerRadius = 5
+        
         profileImageView.frame = CGRect(x: 3,
                                         y: 3,
                                         width: contentView.height - 6,
                                         height: contentView.height - 6)
+        
         profileImageView.layer.cornerRadius = profileImageView.height/2.0
 
         let buttonWidth = contentView.width > 500 ? 220.0 : contentView.width
