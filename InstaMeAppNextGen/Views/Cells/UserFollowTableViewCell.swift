@@ -31,6 +31,8 @@ class UserFollowTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.text = "Anton"
+        
         return label
     }()
     
@@ -38,11 +40,14 @@ class UserFollowTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.text = "@anton"
+
         return label
     }()
     
     private let followButton: UIButton = {
         let button = UIButton()
+        button.backgroundColor = .link
         return button
     }()
     
@@ -76,15 +81,21 @@ class UserFollowTableViewCell: UITableViewCell {
 
         let buttonWidth = contentView.width > 500 ? 220.0 : contentView.width
         
+        followButton.frame = CGRect(x: contentView.width-5-buttonWidth,
+                                    y: 5,
+                                    width: buttonWidth,
+                                    height: contentView.height-10)
+        
+        
         
         let labelHeight = contentView.height/2
         nameLabel.frame = CGRect(x: profileImageView.right+5,
                                  y: 0,
-                                 width: contentView.width-3-profileImageView.width,
+                                 width: contentView.width-3-profileImageView.width-buttonWidth,
                                  height: labelHeight)
         usernameLabel.frame = CGRect(x: profileImageView.right+5,
                                      y: nameLabel.bottom,
-                                 width: contentView.width-3-profileImageView.width,
+                                 width: contentView.width-3-profileImageView.width-buttonWidth,
                                  height: labelHeight)
     }
     
