@@ -154,10 +154,5 @@ class UserFollowTableViewCell: UITableViewCell {
             followButton.layer.borderWidth = 0
             
         }
-        
     }
-    
-    
-    
-
 }
