@@ -135,6 +135,8 @@ class UserFollowTableViewCell: UITableViewCell {
     
     public func configure(with model: UserRelationship){
         
+        self.model = model
+        
         nameLabel.text = model.name
         usernameLabel.text = model.username
         switch model.type{
