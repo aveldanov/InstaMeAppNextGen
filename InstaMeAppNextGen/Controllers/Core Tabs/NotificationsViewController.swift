@@ -85,8 +85,8 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
         for i in 0..<100{
             let post = UserPost(postID: "",
                                 postType: .photo,
-                                thumbNailImageURL: URL(string: "https://www.yahoo.com")!,
-                                postURL: URL(string: "https://www.yahoo.com")!,
+                                thumbNailImageURL: URL(string: "https://www.google.com")!,
+                                postURL: URL(string: "https://www.google.com")!,
                                 caption: nil,
                                 likeCount: [],
                                 comments: [],
@@ -118,17 +118,45 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
         case .like(_):
             // like cell
             let cell = tableView.dequeueReusableCell(withIdentifier: NotificationLikeEventTableViewCell.identifier, for: indexPath) as! NotificationLikeEventTableViewCell
+            cell.delegate = self
             cell.configure(with: model)
             return cell
             
         case .follow:
             // follow cell
             let cell = tableView.dequeueReusableCell(withIdentifier: NotificationFollowEventTableViewCell.identifier, for: indexPath) as! NotificationFollowEventTableViewCell
-            
-            //            cell.configure(with: model)
+            cell.delegate = self
+            cell.configure(with: model)
             
             return cell
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 52
+    }
+    
+}
+
+
+extension NotificationsViewController: NotificationLikeEventTableViewCellDelegate{
+
+    func didTapRelatedPostButton(model: UserNotification) {
+        print("Tapped post")
+        
+        // Open post
+    }
+
+}
+
+extension NotificationsViewController: NotificationFollowEventTableViewCellDelegate{
+    func didTapFollowUnfollowButton(model: UserNotification) {
+        print("Tapped follow/unfollow button")
+        
+        // update DB
+    }
+    
+
+  
+
 }

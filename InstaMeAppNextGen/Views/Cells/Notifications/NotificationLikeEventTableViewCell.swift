@@ -33,7 +33,7 @@ class NotificationLikeEventTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .label
         label.numberOfLines = 0
-        label.text = "@Anton like your photo"
+        label.text = "@Anton liked your photo"
         return label
     }()
     
@@ -51,6 +51,17 @@ class NotificationLikeEventTableViewCell: UITableViewCell {
         contentView.addSubview(profileImageView)
         contentView.addSubview(label)
         contentView.addSubview(postButton)
+        
+        postButton.addTarget(self, action: #selector(didTapPostButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapPostButton(){
+        guard let model = model else {
+            return
+        }
+        
+        delegate?.didTapRelatedPostButton(model: model)
+
     }
     
     required init?(coder: NSCoder) {
@@ -68,14 +79,14 @@ class NotificationLikeEventTableViewCell: UITableViewCell {
         profileImageView.layer.cornerRadius = profileImageView.height/2
         
         let size = contentView.height-4
-        postButton.frame = CGRect(x: contentView.width-size,
+        postButton.frame = CGRect(x: contentView.width-5-size,
                                   y: 2,
                                   width: size,
                                   height: size)
         
-        label.frame = CGRect(x: profileImageView.right,
+        label.frame = CGRect(x: profileImageView.right+5,
                              y: 0,
-                             width: contentView.width-size-profileImageView.width-6,
+                             width: contentView.width-size-profileImageView.width-16,
                              height: contentView.height)
         
     }
@@ -94,6 +105,9 @@ class NotificationLikeEventTableViewCell: UITableViewCell {
         switch model.type{
         case .like(post: let post):
             let thumbnailURL = post.thumbNailImageURL
+            guard !thumbnailURL.absoluteString.contains("google.com") else {
+                return
+            }
             postButton.sd_setBackgroundImage(with: thumbnailURL,
                                              for: .normal,
                                              completed: nil)
