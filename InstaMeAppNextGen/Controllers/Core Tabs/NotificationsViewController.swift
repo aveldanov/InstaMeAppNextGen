@@ -15,14 +15,15 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         return tableView
     }()
     
-    private let noNotificationsView = UIView()
+    private lazy var noNotificationsView = NoNotificationsView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Notifications"
         view.backgroundColor = .systemBackground
-        view.addSubview(tableView)
+//        view.addSubview(tableView)
+        view.addSubview(noNotificationsView)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -31,6 +32,11 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLayoutSubviews()
         
         tableView.frame = view.bounds
+        noNotificationsView.frame = CGRect(x: 0,
+                                           y: 0,
+                                           width: view.width/2,
+                                           height: view.width/2)
+        noNotificationsView.center = view.center
     }
 
     
@@ -40,7 +46,6 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         return cell
     }
     
