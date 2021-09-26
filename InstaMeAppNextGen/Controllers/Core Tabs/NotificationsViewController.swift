@@ -83,6 +83,14 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
     
     private func fetchNotifications(){
         for i in 0..<100{
+            let user = User(username: "@anton",
+                            bio: "",
+                            name: (first: "Anton", last: "V"),
+                            profilePhoto: URL(string: "https://www.google.com")!,
+                            birthDate: Date(),
+                            gender: .other,
+                            counts: UserCount(followers: 1, following: 1, posts: 1),
+                            joinDate: Date())
             let post = UserPost(postID: "",
                                 postType: .photo,
                                 thumbNailImageURL: URL(string: "https://www.google.com")!,
@@ -91,17 +99,11 @@ final class NotificationsViewController: UIViewController, UITableViewDelegate, 
                                 likeCount: [],
                                 comments: [],
                                 createdDate: Date(),
+                                owner: user,
                                 taggedUsers: [])
             let model = UserNotification(type: i%2 == 0 ? .like(post: post): .follow(state: .not_following),
                                          text: "Notific",
-                                         user: User(username: "@anton",
-                                                    bio: "",
-                                                    name: (first: "Anton", last: "V"),
-                                                    profilePhoto: URL(string: "https://www.google.com")!,
-                                                    birthDate: Date(),
-                                                    gender: .other,
-                                                    counts: UserCount(followers: 1, following: 1, posts: 1),
-                                                    joinDate: Date()))
+                                         user: user)
             models.append(model)
         }
     }
