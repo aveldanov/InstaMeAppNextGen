@@ -1,15 +1,15 @@
 //
-//  IGFeedPostTableViewCell.swift
+//  IGFeedPostGeneralTableViewCell.swift
 //  InstaMeAppNextGen
 //
-//  Created by Anton Veldanov on 8/31/21.
+//  Created by Anton Veldanov on 9/1/21.
 //
 
 import UIKit
 
-final class IGFeedPostTableViewCell: UITableViewCell {
-
-    static let identifier = "IGFeedPostTableViewCell"
+///Comments
+class IGFeedPostGeneralTableViewCell: UITableViewCell {
+    static let identifier = "IGFeedPostGeneralTableViewCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -27,5 +27,8 @@ final class IGFeedPostTableViewCell: UITableViewCell {
         
     }
     
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+
 }
