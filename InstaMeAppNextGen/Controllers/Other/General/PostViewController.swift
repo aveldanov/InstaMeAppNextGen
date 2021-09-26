@@ -35,6 +35,18 @@ class PostViewController: UIViewController {
     }
     
     
+    /*
+     Section
+     - Header model
+     Section
+     - Post Cell model
+     Section
+     - Action Buttons Cel model
+     Section
+     - n Number of General Model for comments
+     
+     */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
