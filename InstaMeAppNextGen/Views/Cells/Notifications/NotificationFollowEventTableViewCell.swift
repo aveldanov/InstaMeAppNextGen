@@ -40,7 +40,8 @@ class NotificationFollowEventTableViewCell: UITableViewCell {
     
     private let followButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .red
+        button.layer.cornerRadius = 4
+        button.layer.masksToBounds = true
         return button
     }()
     
@@ -53,6 +54,8 @@ class NotificationFollowEventTableViewCell: UITableViewCell {
         contentView.addSubview(label)
         contentView.addSubview(followButton)
         followButton.addTarget(self, action: #selector(didTapFollowButton), for: .touchUpInside)
+        configureForFollow()
+        selectionStyle = .none
     }
     
     @objc private func didTapFollowButton(){
@@ -78,10 +81,11 @@ class NotificationFollowEventTableViewCell: UITableViewCell {
         profileImageView.layer.cornerRadius = profileImageView.height/2
         
         let size: CGFloat = 100
+        let buttonHeight: CGFloat = 40
         followButton.frame = CGRect(x: contentView.width-5-size,
-                                    y: (contentView.height-44)/2,
+                                    y: (contentView.height-buttonHeight)/2,
                                   width: size,
-                                  height: 44)
+                                  height: buttonHeight)
         
         label.frame = CGRect(x: profileImageView.right+5,
                              y: 0,
