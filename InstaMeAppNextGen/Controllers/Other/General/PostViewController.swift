@@ -7,6 +7,33 @@
 
 import UIKit
 
+/*
+ Section
+ - Header model
+ Section
+ - Post Cell model
+ Section
+ - Action Buttons Cel model
+ Section
+ - n Number of General Model for comments
+ 
+ */
+
+enum PostRenderType{
+    case header
+    case primaryContent //post
+    case actions
+    case comments
+    
+}
+
+
+
+struct PostRenderViewModel{
+    let renderType: PostRenderType
+    
+}
+
 class PostViewController: UIViewController {
 
     private let model: UserPost?
@@ -35,17 +62,7 @@ class PostViewController: UIViewController {
     }
     
     
-    /*
-     Section
-     - Header model
-     Section
-     - Post Cell model
-     Section
-     - Action Buttons Cel model
-     Section
-     - n Number of General Model for comments
-     
-     */
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
