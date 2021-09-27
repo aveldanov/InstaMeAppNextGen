@@ -7,8 +7,20 @@
 import Firebase
 import UIKit
 
+
+struct HomeFeedRenderViewModel{
+    let header: PostRenderViewModel
+    let post: PostRenderViewModel
+    let actions: PostRenderViewModel
+    let comments: PostRenderViewModel
+}
+
 class HomeViewController: UIViewController {
 
+    private var feedRenderModels = [HomeFeedRenderViewModel]()
+
+    
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         
@@ -59,18 +71,92 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return feedRenderModels.count * 4 //each model has 4 sections
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        let sect = section
+        let model: HomeFeedRenderViewModel
+        if sect == 0{ // as we can't devide by 0
+            model = feedRenderModels[0]
+            
+        }else{
+            let position = sect%4 == 0 ? sect/4 : (sect-(sect%4))/4
+            model = feedRenderModels[position]
+        }
+
+        let subSection = sect%4
+        
+        if subSection == 0{
+            // header
+            
+        }else if subSection == 1{
+            //post
+            
+            
+        }else if subSection == 2{
+            //actions
+            
+            
+        }else if subSection == 3{
+            //comments
+            
+        }
+//        switch renderModels[section].renderType{
+//
+//        case .actions(_):
+//            return 1
+//        case .comments(let comments):
+//            return comments.count > 4 ? 4 : comments.count
+//        case .primaryContent(_):
+//            return 1
+//        case .header(_):
+//            return 1
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
-        return cell
+        let model = renderModels[indexPath.section]
+        
+        switch model.renderType{
+        case .actions(let actions):
+            let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
+            return cell
+        case .comments(let comments):
+            let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
+            return cell
+        case .primaryContent(let post):
+            let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
+            return cell
+        case .header(let user):
+            let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
+            return cell
+        }
+        
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let model = renderModels[indexPath.section]
+        
+        switch model.renderType{
+        case .actions(_):
+            return 60
+        case .comments(_):
+            return 50
+        case .primaryContent(_):
+            return tableView.width
+        case .header(_):
+            return 70
+        }
+    }
     
 }
 
