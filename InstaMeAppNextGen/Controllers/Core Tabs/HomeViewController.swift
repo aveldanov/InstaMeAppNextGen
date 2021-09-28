@@ -106,11 +106,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
                 return comments.count > 2 ? 2 : comments.count
            @unknown default:
                 fatalError("Invalid case")
-                
             }
-            
         }
-
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
