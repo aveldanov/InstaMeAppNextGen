@@ -119,15 +119,14 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         switch renderModels[section].renderType{
-            
+        case .header(_):
+            return 1
+        case .primaryContent(_):
+            return 1
         case .actions(_):
             return 1
         case .comments(let comments):
             return comments.count > 4 ? 4 : comments.count
-        case .primaryContent(_):
-            return 1
-        case .header(_):
-            return 1
         }
     }
     

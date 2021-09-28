@@ -90,30 +90,27 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         
         if subSection == 0{
             // header
-            
+            return 1
         }else if subSection == 1{
             //post
-            
+            return 1
             
         }else if subSection == 2{
             //actions
-            
-            
+            return 1
         }else if subSection == 3{
             //comments
+            let commentModel = model.comments
+            switch commentModel.renderType{
+            case .comments(let comments):
+                return comments.count > 2 ? 2 : comments.count
+           @unknown default:
+                fatalError("Invalid case")
+                
+            }
             
         }
-//        switch renderModels[section].renderType{
-//
-//        case .actions(_):
-//            return 1
-//        case .comments(let comments):
-//            return comments.count > 4 ? 4 : comments.count
-//        case .primaryContent(_):
-//            return 1
-//        case .header(_):
-//            return 1
-//        }
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
