@@ -104,14 +104,78 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             switch commentModel.renderType{
             case .comments(let comments):
                 return comments.count > 2 ? 2 : comments.count
-           @unknown default:
+                //unknown enforces switch to be exhaustive. Gives in code warning
+            @unknown default:
                 fatalError("Invalid case")
             }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = renderModels[indexPath.section]
+        
+        let sect = indexPath.section
+        let model: HomeFeedRenderViewModel
+        if sect == 0{ // as we can't devide by 0
+            model = feedRenderModels[0]
+        }else{
+            let position = sect%4 == 0 ? sect/4 : (sect-(sect%4))/4
+            model = feedRenderModels[position]
+        }
+        
+        
+        // get the cell
+        
+        let subSection = sect%4
+        
+        if subSection == 0{
+            // header
+            let headerModel = model.header
+        
+            switch headerModel.renderType{
+            case .header(let user):
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
+            @unknown default:
+                fatalError("Invalid case")
+            }
+        }else if subSection == 1{
+            //post
+            let postModel = model.post
+            
+            switch .primaryContent.renderType{
+            case .primaryContent(let post):
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
+            @unknown default:
+                fatalError("Invalid case")
+            }
+        }else if subSection == 2{
+            //actions
+            let actionModel = model.actions
+            
+            switch commentModel.renderType{
+            case .comments(let comments):
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
+            @unknown default:
+                fatalError("Invalid case")
+            }
+            
+            
+        }else if subSection == 3{
+            //comments
+            let commentModel = model.comments
+            
+            switch commentModel.renderType{
+            case .comments(let comments):
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
+            @unknown default:
+                fatalError("Invalid case")
+            }
+            
+        }
+        
+        
+        
+        
+        
         
         switch model.renderType{
         case .actions(let actions):

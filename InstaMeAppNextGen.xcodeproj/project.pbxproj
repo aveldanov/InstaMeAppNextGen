@@ -39,6 +39,7 @@
 		21036C3E26E5D6B300720B39 /* ProfleInfoHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036C3D26E5D6B300720B39 /* ProfleInfoHeaderCollectionReusableView.swift */; };
 		21036C4026E5D6E200720B39 /* ProfileTabsCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21036C3F26E5D6E200720B39 /* ProfileTabsCollectionReusableView.swift */; };
 		2107F71226EC31DB00200882 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2107F71126EC31DB00200882 /* Models.swift */; };
+		21AAA4DF2706494C00DE623A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 21AAA4DE2706494C00DE623A /* README.md */; };
 		21D0220526F9B1890009984F /* UserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D0220426F9B1890009984F /* UserFollowTableViewCell.swift */; };
 		21DE3D3B26FF0D6800054D7F /* NoNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DE3D3A26FF0D6800054D7F /* NoNotificationsView.swift */; };
 		21DE3D6B26FFB0FE00054D7F /* NotificationFollowEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DE3D6A26FFB0FE00054D7F /* NotificationFollowEventTableViewCell.swift */; };
@@ -82,6 +83,7 @@
 		21036C3D26E5D6B300720B39 /* ProfleInfoHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfleInfoHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		21036C3F26E5D6E200720B39 /* ProfileTabsCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabsCollectionReusableView.swift; sourceTree = "<group>"; };
 		2107F71126EC31DB00200882 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../../../../FlowerClass/Models.swift; sourceTree = "<group>"; };
+		21AAA4DE2706494C00DE623A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		21D0220426F9B1890009984F /* UserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowTableViewCell.swift; sourceTree = "<group>"; };
 		21DE3D3A26FF0D6800054D7F /* NoNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNotificationsView.swift; sourceTree = "<group>"; };
 		21DE3D6A26FFB0FE00054D7F /* NotificationFollowEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFollowEventTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		21036BB326D32B9300720B39 = {
 			isa = PBXGroup;
 			children = (
+				21AAA4DE2706494C00DE623A /* README.md */,
 				21036BBE26D32B9300720B39 /* InstaMeAppNextGen */,
 				21036BBD26D32B9300720B39 /* Products */,
 				ED25E5B06E7E646CA7CD6094 /* Pods */,
@@ -354,6 +357,7 @@
 			files = (
 				21036BCC26D32B9400720B39 /* LaunchScreen.storyboard in Resources */,
 				21036BC926D32B9400720B39 /* Assets.xcassets in Resources */,
+				21AAA4DF2706494C00DE623A /* README.md in Resources */,
 				21036BF426D45D7800720B39 /* GoogleService-Info.plist in Resources */,
 				21036BC726D32B9300720B39 /* Main.storyboard in Resources */,
 			);
