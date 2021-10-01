@@ -114,7 +114,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return feedRenderModels.count * 4 //each model has 4 sections
+        return feedRenderModels.count*4  //each model has 4 sections
     }
     
     
@@ -144,8 +144,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             return 1
         }else if subSection == 3{
             //comments
-            let commentModel = model.comments
-            switch commentModel.renderType{
+            switch model.comments.renderType{
             case .comments(let comments):
                 return comments.count > 2 ? 2 : comments.count
                 
@@ -178,27 +177,24 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         
         if subSection == 0{
             // header
-            let headerModel = model.header
             
-            switch headerModel.renderType{
+            switch model.header.renderType{
             case .header(let user):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
             case .comments, .primaryContent, .actions: return UITableViewCell()
             }
         }else if subSection == 1{
             //post
-            let postModel = model.post
             
-            switch postModel.renderType{
+            switch model.post.renderType{
             case .primaryContent(let post):
-                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
             case .header, .comments, .actions: return UITableViewCell()
             }
         }else if subSection == 2{
             //actions
-            let actionModel = model.actions
             
-            switch actionModel.renderType{
+            switch model.actions.renderType{
             case .actions(let provider):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
             case .header, .comments, .primaryContent: return UITableViewCell()
@@ -207,9 +203,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             
         }else if subSection == 3{
             //comments
-            let commentModel = model.comments
             
-            switch commentModel.renderType{
+            switch model.comments.renderType{
             case .comments(let comments):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostGeneralTableViewCell.identifier, for: indexPath) as! IGFeedPostGeneralTableViewCell
             @unknown default:
@@ -247,9 +242,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         }else{
             return 0
         }
-        
-        
-
+    }
+    
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let subSection = section%4
+        return subSection == 3 ? 70 : 0
     }
     
 }
