@@ -6,4 +6,4 @@
 
 
 
-###### [Firebase-Auth:Database:Storage; SafariServices; SDWebImage]
+###### [Firebase-Auth:Database:Storage; SafariServices; SDWebImage; AVFoundation]

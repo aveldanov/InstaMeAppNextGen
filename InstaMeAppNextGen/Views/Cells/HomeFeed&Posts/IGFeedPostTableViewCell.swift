@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import AVFoundation
 
 /// Cell for post content
 final class IGFeedPostTableViewCell: UITableViewCell {
@@ -52,6 +53,7 @@ final class IGFeedPostTableViewCell: UITableViewCell {
         
         switch post.postType{
         case .photo:
+            postImageView.sd_setImage(with: post.postURL, completed: nil)
             break
         case .video:
             break
