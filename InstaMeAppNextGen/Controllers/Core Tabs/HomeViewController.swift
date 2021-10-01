@@ -16,10 +16,8 @@ struct HomeFeedRenderViewModel{
 }
 
 class HomeViewController: UIViewController {
-
-    private var feedRenderModels = [HomeFeedRenderViewModel]()
-
     
+    private var feedRenderModels = [HomeFeedRenderViewModel]()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -28,11 +26,8 @@ class HomeViewController: UIViewController {
         tableView.register(IGFeedPostTableViewCell.self, forCellReuseIdentifier: IGFeedPostTableViewCell.identifier)
         tableView.register(IGFeedPostActionsTableViewCell.self, forCellReuseIdentifier: IGFeedPostActionsTableViewCell.identifier)
         tableView.register(IGFeedPostGeneralTableViewCell.self, forCellReuseIdentifier: IGFeedPostGeneralTableViewCell.identifier)
-        
-        
         return tableView
     }()
-    
     
     
     override func viewDidLoad() {
@@ -42,7 +37,6 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -54,7 +48,6 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         handleNotAuthenticated()
     }
-    
     
     private func createMockModels(){
         let user = User(username: "@anton",
@@ -92,11 +85,8 @@ class HomeViewController: UIViewController {
                                                     actions: PostRenderViewModel(renderType: .actions(provider: "")),
                                                     comments: PostRenderViewModel(renderType: .comments(comments: comments)))
             feedRenderModels.append(viewModel)
-            
         }
-        
     }
-    
     
     private func handleNotAuthenticated(){
         // check auth status
@@ -106,17 +96,15 @@ class HomeViewController: UIViewController {
             loginVC.modalPresentationStyle = .fullScreen
             present(loginVC, animated: false, completion: nil)
         }
-        
     }
-
 }
 
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return feedRenderModels.count*4  //each model has 4 sections
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // instead of rows I use subSections
@@ -129,7 +117,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             let position = sect%4 == 0 ? sect/4 : (sect-(sect%4))/4
             model = feedRenderModels[position]
         }
-
+        
         let subSection = sect%4
         
         if subSection == 0{
@@ -147,15 +135,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             switch model.comments.renderType{
             case .comments(let comments):
                 return comments.count > 2 ? 2 : comments.count
-                
-                
             case .header, .primaryContent, .actions: return 0
                 //unknown enforces switch to be exhaustive. Gives in code warning
-//            @unknown default:
-//                fatalError("Invalid case")
+                //            @unknown default:
+                //                fatalError("Invalid case")
             }
         }
-        
         return 0
     }
     
@@ -177,7 +162,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         
         if subSection == 0{
             // header
-            
             switch model.header.renderType{
             case .header(let user):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
@@ -185,7 +169,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             }
         }else if subSection == 1{
             //post
-            
             switch model.post.renderType{
             case .primaryContent(let post):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
@@ -193,14 +176,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             }
         }else if subSection == 2{
             //actions
-            
             switch model.actions.renderType{
             case .actions(let provider):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
             case .header, .comments, .primaryContent: return UITableViewCell()
             }
-            
-            
         }else if subSection == 3{
             //comments
             
@@ -210,11 +190,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             @unknown default:
                 fatalError("Invalid case")
             }
-            
         }
-        
         return UITableViewCell()
-
     }
     
     
@@ -224,7 +201,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-                
+        
         let subSection = indexPath.section%4
         
         if subSection == 0{
