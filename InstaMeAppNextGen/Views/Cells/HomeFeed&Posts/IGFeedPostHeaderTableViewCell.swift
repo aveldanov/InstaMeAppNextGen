@@ -8,7 +8,7 @@
 import UIKit
 
 
-/// Cell for
+/// Cell for header
 class IGFeedPostHeaderTableViewCell: UITableViewCell {
 
     static let identifier = "IGFeedPostHeaderTableViewCell"

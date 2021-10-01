@@ -21,10 +21,15 @@ final class IGFeedPostTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    private var player: AVPlayer?
+    // layer for video
+    private var playerLayer = AVPlayerLayer()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .secondarySystemBackground
-        
+        //!layer has to come first!
+        contentView.layer.addSublayer(playerLayer)
         contentView.addSubview(postImageView)
     }
     
@@ -37,6 +42,7 @@ final class IGFeedPostTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         postImageView.frame = contentView.bounds
+        playerLayer.frame = contentView.bounds
     }
     
     
@@ -51,16 +57,14 @@ final class IGFeedPostTableViewCell: UITableViewCell {
     public func configureIGFeedCell(with post: UserPost){
         imageView?.image = UIImage(named: "test")
         
+        return
         switch post.postType{
         case .photo:
             postImageView.sd_setImage(with: post.postURL, completed: nil)
-            break
         case .video:
-            break
-            
-            
-            
-            
+            player = AVPlayer(url: post.postURL)
+            playerLayer.player?.volume = 0 //default volume
+            playerLayer.player?.play()
         }
         
         
