@@ -7,9 +7,17 @@
 
 import UIKit
 
+protocol IGFeedPostActionsTableViewCellDelegate: AnyObject{
+    func didTapLikeButton()
+    func didTapCommentButton()
+    func didTapSendButton()
+}
+
 class IGFeedPostActionsTableViewCell: UITableViewCell {
 
     static let identifier = "IGFeedPostActionsTableViewCell"
+    
+    weak var delegate: IGFeedPostActionsTableViewCellDelegate?
     
     private let likeButton: UIButton = {
         let button = UIButton()
@@ -79,16 +87,16 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     
     @objc func didTapLikeButton(){
         
-        
+        delegate?.didTapLikeButton()
     }
     
     @objc func didTapCommentButton(){
-        
-        
+        delegate?.didTapCommentButton()
     }
     
     @objc func didTapSendButton(){
-        
+        delegate?.didTapSendButton()
+
         
     }
     

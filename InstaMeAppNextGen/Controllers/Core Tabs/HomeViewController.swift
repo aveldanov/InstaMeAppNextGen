@@ -184,6 +184,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             switch model.actions.renderType{
             case .actions(let provider):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostActionsTableViewCell.identifier, for: indexPath) as! IGFeedPostActionsTableViewCell
+                
+                
+                cell.delegate = self
             case .header, .comments, .primaryContent: return UITableViewCell()
             }
         }else if subSection == 3{
@@ -257,6 +260,13 @@ extension HomeViewController: IGFeedPostHeaderTableViewCellDelegate{
         
         
     }
+    
+
+}
+
+
+extension HomeViewController: IGFeedPostActionsTableViewCellDelegate{
+    
     
     
     
