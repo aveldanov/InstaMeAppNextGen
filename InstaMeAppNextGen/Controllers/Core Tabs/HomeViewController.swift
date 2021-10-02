@@ -53,7 +53,7 @@ class HomeViewController: UIViewController {
         let user = User(username: "@anton",
                         bio: "",
                         name: (first: "Anton", last: "V"),
-                        profilePhoto: URL(string: "https://www.google.com")!,
+                        profilePhotoURL: URL(string: "https://www.google.com")!,
                         birthDate: Date(),
                         gender: .other,
                         counts: UserCount(followers: 1, following: 1, posts: 1),
@@ -165,6 +165,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             switch model.header.renderType{
             case .header(let user):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostHeaderTableViewCell.identifier, for: indexPath) as! IGFeedPostHeaderTableViewCell
+                
+                cell.configureCell(with: user)
+                cell.delegate = self
+                
             case .comments, .primaryContent, .actions: return UITableViewCell()
             }
         }else if subSection == 1{
@@ -172,6 +176,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             switch model.post.renderType{
             case .primaryContent(let post):
                 let cell = tableView.dequeueReusableCell(withIdentifier: IGFeedPostTableViewCell.identifier, for: indexPath) as! IGFeedPostTableViewCell
+                cell.configureCell(with: post)
             case .header, .comments, .actions: return UITableViewCell()
             }
         }else if subSection == 2{
@@ -210,6 +215,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         }else if subSection == 1{
             //post
             return tableView.width
+ 
         }else if subSection == 2{
             //action
             return 60
@@ -226,11 +232,34 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         return UIView()
     }
     
-    
+    // gap between posts
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let subSection = section%4
         return subSection == 3 ? 70 : 0
     }
+    
+}
+
+
+extension HomeViewController: IGFeedPostHeaderTableViewCellDelegate{
+    func didTapMoreButton() {
+        let actionSheet = UIAlertController(title: "Post Options", message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Report Post", style: .destructive, handler: {[weak self] _ in
+            self?.reportPost()
+        }))
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    
+    func reportPost(){
+        
+        
+    }
+    
+    
+    
     
 }
 

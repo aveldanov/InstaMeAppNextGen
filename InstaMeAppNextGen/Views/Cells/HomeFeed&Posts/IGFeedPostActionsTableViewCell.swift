@@ -11,6 +11,15 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
 
     static let identifier = "IGFeedPostActionsTableViewCell"
     
+    private let likeButton: UIButton = {
+        let button = UIButton()
+        
+        
+        return button
+    }()
+    
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .systemGreen
@@ -32,5 +41,8 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }

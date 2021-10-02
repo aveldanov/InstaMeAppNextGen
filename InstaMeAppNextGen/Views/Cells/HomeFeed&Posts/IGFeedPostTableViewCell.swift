@@ -16,8 +16,9 @@ final class IGFeedPostTableViewCell: UITableViewCell {
     
     private let postImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.backgroundColor = nil
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -27,8 +28,7 @@ final class IGFeedPostTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .secondarySystemBackground
-        //!layer has to come first!
+        //player has to come first!
         contentView.layer.addSublayer(playerLayer)
         contentView.addSubview(postImageView)
     }
@@ -37,26 +37,23 @@ final class IGFeedPostTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-        postImageView.frame = contentView.bounds
         playerLayer.frame = contentView.bounds
+        postImageView.frame = contentView.bounds
     }
-    
     
     override func prepareForReuse() {
         super.prepareForReuse()
         postImageView.image = nil
-        
     }
     
     // configure cell
 
-    public func configureIGFeedCell(with post: UserPost){
-        imageView?.image = UIImage(named: "test")
-        
+    public func configureCell(with post: UserPost){
+        postImageView.image = UIImage(named: "test")
+
+
         return
         switch post.postType{
         case .photo:
@@ -66,9 +63,5 @@ final class IGFeedPostTableViewCell: UITableViewCell {
             playerLayer.player?.volume = 0 //default volume
             playerLayer.player?.play()
         }
-        
-        
-        
     }
-    
 }
