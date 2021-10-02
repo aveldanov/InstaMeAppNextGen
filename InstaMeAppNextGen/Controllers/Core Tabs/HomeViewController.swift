@@ -266,6 +266,20 @@ extension HomeViewController: IGFeedPostHeaderTableViewCellDelegate{
 
 
 extension HomeViewController: IGFeedPostActionsTableViewCellDelegate{
+    func didTapLikeButton() {
+        print("[Actions] Like Tapped")
+    }
+    
+    func didTapCommentButton() {
+        print("[Actions] Comment Tapped")
+
+    }
+    
+    func didTapSendButton() {
+        print("[Actions] Send Tapped")
+
+    }
+    
     
     
     
