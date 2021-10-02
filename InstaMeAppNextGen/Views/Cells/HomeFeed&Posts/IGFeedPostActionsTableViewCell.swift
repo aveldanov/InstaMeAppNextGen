@@ -27,7 +27,7 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     
     private let sendButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "send"), for: .normal)
+        button.setImage(UIImage(systemName: "paperplane"), for: .normal)
         button.tintColor = .label
         return button
     }()
@@ -35,7 +35,6 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .systemGreen
         contentView.addSubview(likeButton)
         contentView.addSubview(commentButton)
         contentView.addSubview(sendButton)
@@ -54,10 +53,25 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        //like, comment, send
+        
+        let buttonSize = contentView.height-10
+        let buttons = [likeButton, commentButton, sendButton]
+        
+        for i in 0..<buttons.count{
+            let button = buttons[i]
+            // x = size + buffer
+            button.frame = CGRect(x: (CGFloat(i)*buttonSize)+(10*CGFloat(i+1)),
+                                  y: 5,
+                                  width: buttonSize,
+                                  height: buttonSize)
+            }
+        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
     }
     
      //MARK: Actions
@@ -81,7 +95,7 @@ class IGFeedPostActionsTableViewCell: UITableViewCell {
     
     
     
-    public func configureIGFeedCell(){
+    public func configureIGFeedCell(with model: UserPost){
         // configure cell
 
         
